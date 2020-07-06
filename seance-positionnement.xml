@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="presentation.ui" ?>
+
+<cours>
+	<titre>Positionner des éléments en CSS</titre>
+	<section>
+		<partie>
+			<section>
+				<h5>Qu'allons-nous voir aujourd'hui ?</h5>
+				<ol>
+					<li>Pourquoi positionner ?</li>
+					<li>Le flottement</li>
+					<li>Les différents modes de positionnement
+						
+					</li>
+					<li>Les propriétés de déplacement
+						
+					</li>
+				</ol>
+			</section>
+		</partie>
+		<partie>
+			<h3>Pourquoi utiliser les modes de positionnement ?</h3>
+			<p>Parce que certains patrons de conceptions (les menu déroulants, les fenêtres modales, les navigations fixées, etc.) nécessitent qu'on les positionne de manière spécifique.</p>
+		</partie>
+		<partie>
+			<h2>Quelques exemples ?</h2>
+		</partie>
+		<partie>
+			<div>
+			<h3>Le flottement</h3>
+				<section>
+					<div>
+						<div class="float-example interactive-model">
+							<div contenteditable="true">
+								<p>
+									<img src="assets/img/nicolas.jpg" />
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</div>
+							<br/>
+							<hr/>
+							<br/>
+							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+						</div>
+						
+					</div>
+				</section>
+			</div>
+			<form class="model-controls">
+				<details>
+					<summary>
+						<span>Conteneur</span>
+						<hr/>
+					</summary>
+					<ul>
+						<li><label>Float</label>
+							<select name="parent-float">
+								<option value="none" selected="">none</option>
+								<option value="left">left</option>
+								<option value="right">right</option>
+							</select>
+						</li>
+						<li><label>Overflow</label>
+							<select name="parent-overflow">
+								<option value="visible" selected="">visible</option>
+								<option value="auto">auto</option>
+								<option value="scroll">scroll</option>
+								<option value="hidden">hidden</option>
+							</select>
+						</li>
+						<li><label>Width</label><input type="range" step="10" min="80" max="800" value="200" name="parent-width" /><input type="checkbox" name="parent-width" value="auto" checked="" /></li>
+						<li><label>Height</label><input type="range" step="10" min="80" max="400" value="100" name="parent-height" /><input type="checkbox" name="parent-height" value="auto" checked="" /></li>
+						<li><label>Padding</label><input type="range" step="10" min="0" max="200" value="0" name="parent-padding" /></li>
+						<li><label>Margin</label><input type="range" step="10" min="-100" max="100" value="0" name="parent-margin" /><input type="checkbox" name="parent-margin" value="auto" /></li>
+					</ul>
+				</details>
+				<details open="">
+					<summary>
+						<span>Image de Nicolas</span>
+						<hr/>
+					</summary>
+					<ul>
+						<li>
+							<label>Float</label>
+							<select name="float">
+								<option value="none" selected="">none</option>
+								<option value="left">left</option>
+								<option value="right">right</option>
+							</select>
+						</li>
+						<li><label>Width</label><input type="range" step="10" min="80" max="800" value="200" name="width" /><input type="checkbox" name="width" value="auto" checked="" /></li>
+						<li><label>Height</label><input type="range" step="10" min="80" max="400" value="200" name="height" /><input type="checkbox" name="height" value="auto" checked="" /></li>
+						<li><label>Margin</label><input type="range" step="10" min="-80" max="200" value="0" name="margin" /><input type="checkbox" name="margin" value="auto" /></li>
+					</ul>
+				</details>
+				<details>
+					<summary>
+						<span>Règle horizontale</span>
+						<hr/>
+					</summary>
+					<ul>
+						<li><label>Clear</label>
+							<select name="clear">
+								<option value="none" selected="">none</option>
+								<option value="left">left</option>
+								<option value="right">right</option>
+								<option value="both">both</option>
+							</select>
+						</li>
+						<li><label>Margin</label><input type="range" step="10" min="-80" max="200" value="0" name="hr-margin" /><input type="checkbox" name="hr-margin" value="auto" /></li>
+					</ul>
+				</details>
+			</form>
+		</partie>
+		<partie>
+			<div style="align-self: flex-start;">
+				<h3>Les modes de positionnement</h3>
+				<section>
+					<div class="positioning-example interactive-model" contenteditable="true">
+						<p>Contenu précédent</p>
+						<div>
+							<p>Je suis l'élément ciblé par les contrôles.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+						<p>Contenu subséquent</p>
+					</div>
+				</section>
+			</div>
+			<form class="model-controls">
+				<details>
+					<summary>
+						<span>Conteneur</span>
+						<hr/>
+					</summary>
+						
+					<ul>
+						<li><label for="">Position</label>
+							<select name="parent-position">
+								<option value="static" selected="">static</option>
+								<option value="relative">relative</option>
+								<option value="absolute">absolute</option>
+								<option value="fixed">fixed</option>
+							</select>
+						</li>
+						<li><label>Top</label>
+							<input type="range" step="10" min="-100" max="100" value="0" name="parent-top" />
+							<input type="checkbox" name="parent-top" value="auto" checked="" />
+						</li>
+						<li><label>Right</label><input type="range" step="10" min="-100" max="100" value="0" name="parent-right" /><input type="checkbox" name="parent-right" value="auto" checked="" /></li>
+						<li><label>Bottom</label><input type="range" step="10" min="-100" max="100" value="0" name="parent-bottom" /><input type="checkbox" name="parent-bottom" value="auto" checked="" /></li>
+						<li><label>Left</label><input type="range" step="10" min="-100" max="100" value="0" name="parent-left" /><input type="checkbox" name="parent-left" value="auto" checked="" /></li>
+						<li><label>Width</label><input type="range" step="10" min="400" max="1600" value="200" name="parent-width" /><input type="checkbox" name="parent-width" value="auto" checked="" /></li>
+						<li><label>Height</label><input type="range" step="10" min="400" max="1600" value="200" name="parent-height" /><input type="checkbox" name="parent-height" value="auto" checked="" /></li>
+					</ul>
+				</details>
+				<details open="">
+					<summary>
+						<span>Element</span>
+						<hr/>
+					</summary>
+					<ul>
+						<li><label>Position</label>
+							<select name="position">
+								<option value="static" selected="">static</option>
+								<option value="relative">relative</option>
+								<option value="absolute">absolute</option>
+								<option value="fixed">fixed</option>
+								<option value="sticky">sticky</option>
+							</select>
+						</li>
+						<li><label>Top</label>
+							<input type="range" step="10" min="-100" max="100" value="0" name="top" />
+							<input type="checkbox" name="top" value="auto" checked="" />
+						</li>
+						<li><label>Right</label><input type="range" step="10" min="-100" max="100" value="0" name="right" /><input type="checkbox" name="right" value="auto" checked="" /></li>
+						<li><label>Bottom</label><input type="range" step="10" min="-100" max="100" value="0" name="bottom" /><input type="checkbox" name="bottom" value="auto" checked="" /></li>
+						<li><label>Left</label><input type="range" step="10" min="-100" max="100" value="0" name="left" /><input type="checkbox" name="left" value="auto" checked="" /></li>
+						<li><label>Width</label><input type="range" step="10" min="100" max="1600" value="200" name="width" /><input type="checkbox" name="width" value="auto" checked="" /></li>
+						<li><label>Height</label><input type="range" step="10" min="100" max="600" value="200" name="height" /><input type="checkbox" name="height" value="auto" checked="" /></li>
+						<li><label>Margin</label><input type="range" step="10" min="-80" max="200" value="0" name="margin" /><input type="checkbox" name="margin" value="auto" /></li>
+					</ul>
+				</details>
+			</form>
+		</partie>
+		<partie>
+			<h3>Lecture subséquente</h3>
+			<ul>
+				<li><a href="https://www.w3.org/TR/css-position-3/">W3C - Module de positionnement CSS</a></li>
+				<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/position">MDN - Propriété « position »</a></li>
+				<li><a href="https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout/Le_positionnement">Introduction au positionnement</a></li>
+			</ul>
+		</partie>
+	</section>
+</cours>

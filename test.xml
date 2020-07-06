@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="presentation.ui" ?>
+
+<cours>
+	<titre>Positionner des éléments en CSS</titre>
+	<section name="Introduction">
+		<partie>
+			<div>
+				<h5>Qu'allons-nous voir aujourd'hui ?</h5>
+				<ol>
+					<li>Pourquoi positionner ?</li>
+					<li>Le flottement</li>
+					<li>Les différents modes de positionnement
+						
+					</li>
+					<li>Les propriétés de déplacement
+						
+					</li>
+				</ol>
+			</div>
+		</partie>
+		<partie>
+			<h1>Prêts ?</h1>
+		</partie> 
+		<partie>
+			<div>
+			<h3>Le flottement</h3>
+				<section>
+					<div>
+						<div class="grid-example interactive-model" contenteditable="true">
+							<p>Ceci est un carré.</p>
+							<p>Ceci est un carré.</p>
+							<p>Ceci est un carré.</p>
+						</div>
+						<br/>
+						<hr/>
+						<br/>
+						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+					</div>
+				</section>
+			</div>
+		</partie>
+		<partie>
+			<div>
+				<h3>Les modes de positionnement</h3>
+				<section>
+					<div class="transform-example interactive-model">
+						<div></div>
+					</div>
+				</section>
+			</div>
+			<form class="model-controls">
+				<ul>
+					<li><label for="">Transform</label>
+						<input name="transform" type="text" list="transform-values" />
+					</li>
+				</ul>
+				<datalist id="transform-values">
+					<option value="rotateZ(20deg)"></option>
+					<option value="translateX(20px)"></option>
+					<option value="skew(20px)"></option>
+				</datalist>
+			</form>
+		</partie>
+	</section>
+</cours>

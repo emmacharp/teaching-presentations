@@ -1,0 +1,44 @@
+/* Textual elements */
+	p {
+		line-height: var(--line-height-tight);
+		max-width: 36em;
+	}
+
+	h1 {
+		font-size: var(--font-huge);
+	}
+
+	h2 {
+		font-size: var(--font-tallest);
+	}
+
+	h3 {
+		font-size: var(--font-taller);
+	}
+
+	h4 {
+		font-weight: 500;
+	}
+
+	h5 {
+		font-weight: 600;
+		font-size: var(--font-tall);
+		color: var(--accent);
+	}
+
+	p+p {
+		margin-top: var(--spacing-micro);
+	}
+
+	b {
+		color: var(--secondary);
+		vertical-align: sub;
+	}
+
+	strong {
+		font-weight: 600;
+	}
+
+	img {
+		max-width: 100%;
+	}

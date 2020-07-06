@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="presentation.ui" ?>
+
+<cours>
+	<titre>Le concept de <strong>fonction</strong> en programmation Web</titre>
+	<section name="Introduction">
+		<partie>
+			<div>
+				<h5>Qu'allons-nous voir aujourd'hui ?</h5>
+				<ol>
+					<li><h2>C'est <strong>quoi</strong> une fonction ?</h2>
+						<ul>
+							<li>Intrant</li>
+							<li>Sortant</li>
+							<li>Corps</li>
+							<li>Signature</li>
+							<li>...</li>
+						</ul>
+					</li>
+					<li><h2><strong>Pourquoi</strong> utiliser les fonctions ?</h2>
+						<ul>
+							<li>Réutilisabilité</li>
+							<li>Découplement</li>
+							<li>Compréhension</li>
+							<li>Abstraction</li>
+							<li>...</li>
+						</ul>
+						<!-- Code pdes algorithmes est plus simple, plus clair et plus court. Toute modification se répercutera automatiquement. Réutiliser son travail et gagner du temps... Personne n'aime se répéter. -->
+					</li>
+					<li><h2><strong>Quand</strong> recourir aux fonctions ?</h2>
+						<ul>
+							<li>Appels</li>
+							<li>Définitions</li>
+							<li>Exemples</li>
+						</ul>
+					</li>
+					<li><h2><strong>Comment</strong> utiliser les fonctions ?</h2>
+						<ul>
+							<li>Corps</li>
+							<li>Retour</li>
+							<li>Arguments</li>
+							<li>Portée</li>
+							<li>Lisibilité</li>
+							<li>...</li>
+						</ul>
+					</li>
+				</ol>
+			</div>
+		</partie>
+		<partie>
+			<h1>Prêts ?</h1>
+		</partie>
+	</section>
+	<section name="C'est quoi ?">
+		<partie>
+			<h1>C'est <strong>quoi</strong> une fonction ?</h1>
+		</partie>
+		<partie>
+			<h1>La fonction est un bloc <em>fondamental</em> de la programmation Web.</h1>
+		</partie>
+		<partie>
+			<h2  >La fonction origine des mathématiques...</h2  >
+			<blockquote>
+				<p>Il s'agit d'exprimer mathématiquement l'idée intuitive d'<strong>associer</strong>, selon une certaine <strong>règle</strong>, certains <strong>objets</strong> avec d'autres ou avec eux-mêmes.</p>
+				<footer>
+					<cite>
+						<a target="_blank" href="https://www.universalis.fr/encyclopedie/fonction-mathematiques/">Jean-Marie PRUVOST-BEAURAIN, <em>Encyclopeaedia Universalis France</em></a>
+					</cite>
+				</footer>
+			</blockquote>
+		</partie>
+		<partie>
+			<header>
+				<h2>Qui d'entre-vous est familier avec le concept mathématique..?</h2>
+			</header>
+			<figure>
+				<img src="assets/img/sine.png" alt="Sine"/>
+				<legend>Graphique de la fonction <em>Sine</em></legend>
+			</figure>
+		</partie>
+		<partie>
+			<h5>L'expression fondamentale</h5>
+			<h1><em>x ↦ ƒ(x)</em></h1>
+		</partie>
+		<partie>
+			<h5>L'expression fondamentale</h5>
+			<h1><em>intrant ↦ sortant</em></h1>
+		</partie>
+		<partie>
+			<header>
+				<h2>Et en programmation Web..?</h2>
+				<pre>
+function <span title="Nom">celciusAFahrenheit</span>(<span title="Paramètre">degreCelcius</span>) {
+	var degreFahrenheit = degreCelcius * 9 / 5 + 32;
+	return <span title="Retour">degreFahrenheit</span>;
+}
+				</pre>
+				<p>Qui d'entre-vous y est familier <em>un peu...</em>, <em>moyennement...</em>, <strong>beaucoup ?</strong></p>
+			</header>
+		</partie>
+		<partie>
+				<h5>La fonction en programmation Web</h5>
+			<div>
+				<h2>La fonction est une <strong>sous-tâche</strong> permettant la résolution d’un problème...</h2>
+				<p>Un algorithme indépendant dont l'appel déclenche l'exécution. Retourne ou non, une valeur.</p>
+			</div>
+		</partie>
+		<partie>
+			<h5>Une fonction essentiellement, c'est...</h5>
+			<ul>
+				<li>
+					<h3>Une définition</h3>
+					<ul>
+						<li><h3>Une signature</h3></li>
+						<li><h3>Un corps</h3></li>
+					</ul>
+				</li>
+				<li><h3>Plusieurs appels...</h3></li>
+			</ul>
+		</partie>
+		<partie>
+			<div>
+				<h2>La définition</h2>
+				<pre>
+function <span title="Nom">celciusAFahrenheit</span>(<span title="Paramètre">degreCelcius</span>) {
+	var degreFahrenheit = degreCelcius * 9 / 5 + 32;
+	return <span title="Retour">degreFahrenheit</span>;
+}
+				</pre>
+				<p>La définition se décortique en deux parties majeures. La signature et le corps.</p>
+			</div>
+		</partie>
+		<partie>
+			<div>
+				<h2>La signature</h2>
+				<pre>
+function <span title="Nom">celciusAFahrenheit</span>(<span title="Paramètre">degreCelcius</span>) {
+	<span>// corps de la fonction...</span>
+	return <span title="Retour">degreFahrenheit</span>;
+}
+				</pre>
+				<p>La signature d'une fonction doit la rendre unique et reconnaissable.</p>
+			</div>
+		</partie>
+		<partie>
+			<div>
+				<h2>Le nom</h2>
+				<pre class="highlight">
+function <span title="Nom" class="highlight">celciusAFahrenheit</span>(<span>degreCelcius</span>) {
+	<span>// corps de la fonction...</span>
+	return <span>degreFahrenheit</span>;
+}
+				</pre>
+				<div>
+					<p><strong>Il doit au minimum :</strong></p>
+					<br/>
+					<ul>
+						<li><h3>être unique</h3></li>
+						<li><h3>ne pas avoir d'espace ni de caractères spéciaux</h3></li>
+						<li><h3>commencer par un lettre <em>minuscule</em> ou un <em>underscore</em></h3></li>
+					</ul>
+				</div>
+			</div>
+		</partie>
+		<partie>
+			<div>
+				<h2>Les paramètres</h2>
+				<pre class="highlight">
+function <span>celciusAFahrenheit</span>(<span title="Paramètre" class="highlight">degreCelcius</span>) {
+	<span>// corps de la fonction...</span>
+	return <span>degreFahrenheit</span>;
+}				</pre>
+				<p>Le paramètre agit en tant que <strong>variable locale</strong> à une fonction. <strong>Toute valeur provenant du programme appelant la fonction devrait être passée par l'entremise de paramètres.</strong></p>
+				<p>Ils sont le pont entre le programme et la fonction qui elle, ne connaît ni accède à aucune valeur extérieure à elle-même. <strong>Les paramètres sont les intrants de notre fonction.</strong></p>
+			</div>
+		</partie>
+		<partie>
+			<div>
+				<h2>Le retour</h2>
+				<pre class="highlight">
+function <span>celciusAFahrenheit</span>(<span>degreCelcius</span>) {
+	<span>// corps de la fonction...</span>
+	return <span title="Retour" class="highlight">degreFahrenheit</span>;
+}
+				</pre>
+				<p>Le retour est optionel. La fonction peut ou ne pas retourner une valeur au programme qui l'appelle. <strong>La valeur du retour est unique.</strong> Le retour signale la terminaison des opérations de la fonction. Le retour est <strong>le sortant</strong> de notre fonction.</p>
+			</div>
+		</partie>
+		<partie>
+			<div>
+				<h2>Le corps</h2>
+				<pre class="highlight">
+function celciusAFahrenheit(degreCelcius) {
+	<span title="Corps" class="highlight">var degreFahrenheit = degreCelcius * 9 / 5 + 32;</span>
+	return degreFahrenheit;
+}
+				</pre>
+				<p>Le corps de la fonction enchaîne les opérations nécessaires à la génération du retour. Seul est accessible ce qui provient de la fonction elle-même (aucune valeur extérieure).</p>
+				<p>La compréhension des instructions du corps de la fonction ne doit pas être nécessaire à son appel. Il s'agit d'une « boîte noire ». La signature devrait nous donner toute l'information nécessaire à l'appel.</p>
+			</div>
+		</partie>
+		
+		<partie>
+			<h2>Après la définition, le ou les appels...</h2>
+			<pre>
+var temperatureActuelleEnFahrenheit = celsiusAFahrenheit(24);
+	<span>// retourne 75.2</span>
+			</pre>
+		</partie>
+		
+		<partie>
+			<div>
+				<h5>Faisons un exercice ensemble</h5>
+				<h2>Comment calculerait-on <strong>l'aire d'un cercle</strong> à l'aide d'une fonction ?</h2>
+				<ul>
+					<li>Quels seraient les intrants et sortants ? Comment la nommerait-on ?</li>
+					<li>Quel type de retour auquel pourrions-nous nous attendre ?</li>
+					<li>Est-ce qu'une ou des fonctions prédéfinies pourraient nous prêter main forte ?</li>
+				</ul>
+			</div>
+
+		</partie>
+	</section>
+</cours>

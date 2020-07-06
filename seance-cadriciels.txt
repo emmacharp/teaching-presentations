@@ -1,0 +1,45 @@
+# Frameworks CSS
+
+C'est, à l'origine, la difficulté inhérente à la réalisation de grilles en tout genre qui a encouragé l'essor des cadriciels CSS.
+
+### Exemples
+- Foundation
+- Bulma
+- Bootstrap
+- Tachyons
+- etc....
+
+Il se trouve une quantité faramineuse de cadriciels CSS.
+
+Ils offrent, pour la plupart d'entre eux, des patrons de conception d'interface préétablis. Ils peuvent aussi proposer différents modules et outils.
+
+ie:
+reset style sheet
+grid especially for responsive web design
+web typography
+set of icons in sprites or icon fonts
+styling for tooltips, buttons, elements of forms
+parts of graphical user interfaces like accordion, tabs, slideshow or modal windows (Lightbox)
+equalizer to create equal height content
+often used CSS helper classes (left, hide)
+
+Leur valeur première réside dans la facilité avec laquelle des développeurs, peu enclins à la conception graphique, peuvent construire des interfaces robustes sans se questionner d'un point de vue ergonomique.
+
+De manière secondaire, ils facilitent l'uniformisation des styles et la cohérence leur application.
+
+Leur valeur grandit à mesure que les développeurs s'ajoutent au projet.
+
+
+Leur usage devient plus fastidieux lorsque les besoins de l'application nécessitent d'étendre ou outrepasser les règles qu'ils ont définies. En ce sens, il est judicieux de les utiliser pour des tâches bien précises, en considérant leurs contraintes et limitations.
+
+exemples :
+- les grilles, c'est 12 colonnes. Pas une de plus, pas une de moins.
+- Les unités, c'est en pixel.
+- Une grille, c'est maximum 1140px.
+- Des !important partout... ou presque. Du moins sur les utilitaires.
+- etc.
+
+Évidemment, on peut déroger aux règles préétablies en les modifiant... Mais on s'aventure en terrain toujours plus glissant.
+
+https://usablica.github.io/front-end-frameworks/compare.html?v=2.0
+http://cssframeworks.org/

@@ -1,0 +1,33 @@
+# Le référencement
+
+## Les enjeux de l'optimisation pour les moteurs de recherche
+
+- Rendre un site visible de façon pérenne ;
+- Permettre un bon référencement ;
+- Capter du trafic qualifié depuis les moteurs de recherche ;
+- Augmenter le nombre de conversions ;
+- Construire une image de marque en direction des internautes.
+
+### Références
+
+- [Page Wikipedia](https://fr.wikipedia.org/wiki/Optimisation_pour_les_moteurs_de_recherche)
+- [Page Web idéalement optimisée (en anglais)](https://moz.com/learn/seo/on-page-factors)
+
+## Ressources à consulter
+
+- La structure sémantique 
+    + [HTML Doctor (PDF)](http://html5doctor.com/downloads/h5d-sectioning-flowchart.pdf)
+- Les metas (description & robots, surtout)
+    + [Les meta sur MDN](https://developer.mozilla.org/fr/docs/Web/HTML/Element/meta)
+- Données structurées
+    + [Guide Google](https://developers.google.com/search/docs/guides/intro-structured-data?hl=fr)
+    + [Exemple Biron](https://search.google.com/structured-data/testing-tool/u/0/?hl=fr#url=biron.com)
+- Les cartes de site (sitemaps)
+    + [Carte du site Deux Huit Huit](https://deuxhuithuit.com/fr/sitemap/)
+    + [Outil de génération de carte de site](https://www.xml-sitemaps.com/)
+- Audit Lighthouse (Inspecteur Chrome)
+- Valider la structure HTML et le schéma du document.
+    + [Validateur W3C](https://validator.w3.org/nu/?showoutline=yes)
+    + [Exemple La Presse](https://validator.w3.org/nu/?showoutline=yes&doc=http%3A%2F%2Flapresse.ca)
+- Les analytiques
+    + [Démo Google](https://analytics.google.com/analytics/web/?utm_source=demoaccount&utm_medium=demoaccount&utm_campaign=demoaccount)

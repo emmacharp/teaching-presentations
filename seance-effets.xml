@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="presentation.ui" ?>
+
+<cours>
+	<titre>Appliquer des effets en CSS</titre>
+	<section name="Introduction">
+		<partie>
+			<!-- <div> -->
+				<h5>Qu'allons-nous voir dans les deux prochains cours ?</h5>
+				<ol>
+					<!-- <li>Pourquoi appliquer des effets ?</li> -->
+					<li>Les transformations</li>
+					<li>Les transitions et leur déclenchement</li>
+					<li>Les animations</li>
+				</ol>
+			<!-- </div> -->
+		</partie>
+		<partie>
+			<h3>Pourquoi appliquer des effets ?</h3>
+			<p>Pour contribuer à la création d'une expérience qui soit à la fois dynamique, fluide et remarquable.
+				<br/><br/>
+				Les <em>designers</em> en raffolent !
+			</p>
+		</partie>
+		<partie>
+			<div>
+			<h3>Les transformations</h3>
+				<section>
+					<div>
+						<div class="transform-example interactive-model">
+							<div contenteditable="true">
+								<p>
+									<img src="assets/img/nicolas.jpg" />
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</div>
+						</div>
+						
+					</div>
+				</section>
+			</div>
+			<form class="model-controls" id="transform">
+				<p>
+					/*
+						<br/>
+						Toutes les valeurs ci-dessous sont utilisées l'une à la suite de l'autre comme ceci :
+						<br/><br/>
+						<strong>transform</strong>: scale(1.2) skewX(3);
+						<br/>
+					*/
+				</p>
+				<details open="">
+					<summary>
+						<span>Rotation</span>
+						<hr/>
+					</summary>
+					<ul>
+						<li><div>
+							<label>rotate</label>
+						</div>
+							<input type="range" step="10" min="-360" max="360" value="0" name="rotate" /><!-- <input type="checkbox" name="rotate" value="0" checked="" /> -->
+						</li>
+						<li><div>
+							<label>rotateY</label>
+						</div>
+							<input type="range" step="10" min="-360" max="360" value="0" name="rotateY" /><!-- <input type="checkbox" name="rotateY" value="0" checked="" /> -->
+						</li>
+						<li><div>
+							<label>rotateX</label>
+						</div>
+							<input type="range" step="10" min="-360" max="360" value="0" name="rotateX" /><!-- <input type="checkbox" name="rotateX" value="0" checked="" /> -->
+						</li>
+						<li><div>
+							<label>rotateZ</label>
+						</div>
+							<input type="range" step="10" min="-360" max="360" value="0" name="rotateZ" /><!-- <input type="checkbox" name="rotateZ" value="0" checked="" /> -->
+						</li>
+					</ul>
+				</details>
+				<details>
+					<summary>
+						<span>Redimensionnement</span>
+						<hr/>
+					</summary>
+					<ul>
+						<li><div>
+							<label>scale</label>
+						</div>
+							<input type="range" step=".1" min="-2" max="2" value="1" name="scale" /><!-- <input type="checkbox" name="scale" value="1" checked="" /> -->
+						</li>
+						<li><div>
+							<label>scaleY</label>
+						</div>
+							<input type="range" step=".1" min="-2" max="2" value="1" name="scaleY" /><!-- <input type="checkbox" name="scaleY" value="1" checked="" /> -->
+						</li>
+						<li><div>
+							<label>scaleX</label>
+						</div>
+							<input type="range" step=".1" min="-2" max="2" value="1" name="scaleX" /><!-- <input type="checkbox" name="scaleX" value="1" checked="" /> -->
+						</li>
+						<li><div>
+							<label>scaleZ</label>
+						</div>
+							<input type="range" step=".1" min="-2" max="2" value="1" name="scaleZ" /><!-- <input type="checkbox" name="scaleZ" value="1" checked="" /> -->
+						</li>
+					</ul>
+				</details>
+				<details>
+					<summary>
+						<span>Distorsion</span>
+						<hr/>
+					</summary>
+					<ul>
+						<li><div>
+							<label>skew</label>
+						</div>
+							<input type="range" step="10" min="-360" max="360" value="0" name="skew" /><!-- <input type="checkbox" name="skew" value="0" checked="" /> -->
+						</li>
+						<li><div>
+							<label>skewY</label>
+						</div>
+							<input type="range" step="10" min="-360" max="360" value="0" name="skewY" /><!-- <input type="checkbox" name="skewY" value="0" checked="" /> -->
+						</li>
+						<li><div>
+							<label>skewX</label>
+						</div>
+							<input type="range" step="10" min="-360" max="360" value="0" name="skewX" /><!-- <input type="checkbox" name="skewX" value="0" checked="" /> -->
+						</li>
+					</ul>
+				</details>
+				<details>
+					<summary>
+						<span>Déplacement</span>
+						<hr/>
+					</summary>
+					<ul>
+						<li><div>
+							<label>translate</label>
+						</div>
+							<input type="range" step="10" min="-100" max="100" value="0" name="translate" /><!-- <input type="checkbox" name="translate" value="0" checked="" /> -->
+						</li>
+						<li><div>
+							<label>translateY</label>
+						</div>
+							<input type="range" step="10" min="-100" max="100" value="0" name="translateY" /><!-- <input type="checkbox" name="translateY" value="0" checked="" /> -->
+						</li>
+						<li><div>
+							<label>translateX</label>
+						</div>
+							<input type="range" step="10" min="-100" max="100" value="0" name="translateX" /><!-- <input type="checkbox" name="translateX" value="0" checked="" /> -->
+						</li>
+						<li><div>
+							<label>translateZ</label>
+						</div>
+							<input type="range" step="10" min="-100" max="100" value="0" name="translateZ" /><!-- <input type="checkbox" name="translateZ" value="0" checked="" /> -->
+						</li>
+					</ul>
+				</details>
+				
+			</form>
+		</partie>
+		<partie>
+			<div style="align-self: flex-start;">
+				<h3>Les transitions</h3>
+				<section>
+					<div class="transition-example interactive-model" contenteditable="true">
+						<img src="assets/img/nicolas.jpg" />
+					</div>
+				</section>
+			</div>
+			<form class="model-controls">
+				<details>
+					<summary>
+						<span>Transitions</span>
+						<hr/>
+					</summary>
+						
+					<ul>
+						<!-- <li><label for="">Déclencheurs</label>
+
+							<input name="parent-position" value="hover" type="checkbox" />
+							<input name="parent-position" value="active" type="checkbox"/>
+						</li> -->
+						
+						<li><label>transition-duration</label>
+							<input type="range" step="100" min="0" max="5000" value="0" name="transition-duration" />
+						</li>
+						<li><label>transition-property</label>
+							<input type="text" value="all" list="transition-properties" name="transition-property" />
+						</li>
+						<li><label>transition-delay</label>
+							<input type="range" step="100" min="0" max="5000" value="0" name="transition-delay" />
+						</li>
+						<li><label>transition-timing-function</label>
+							<input type="text" value="linear" list="transition-timing-functions" name="transition-timing-function" />
+						</li>
+					</ul>
+					<datalist id="transition-timing-functions">
+						<option value="linear">linear</option>
+						<option value="ease-in">ease-in</option>
+						<option value="ease-out">ease-out</option>
+						<option value="ease-in-out">ease-in-out</option>
+					</datalist>
+					<datalist id="transition-properties">
+						<option value="margin">margin</option>
+						<option value="width">width</option>
+						<option value="top">top</option>
+						<option value="transform">transform</option>
+					</datalist>
+				</details>
+				<details open="">
+					<summary>
+						<span>Propriétés sélectionnées</span>
+						<hr/>
+					</summary>
+					<ul>
+						<!-- <li><label>position</label>
+
+							<select name="position">
+								<option value="static" selected="">static</option>
+								<option value="relative">relative</option>
+								<option value="absolute">absolute</option>
+								<option value="fixed">fixed</option>
+							</select>
+						</li> -->
+						<li><label>transform</label>
+							<input type="text" value="initial" name="transform" />
+						</li>
+						<li><label>width</label>
+							<input type="range" step="10" min="100" max="1600" value="200" name="width" /><input type="checkbox" name="width" value="auto" checked="" />
+						</li>
+						<li><label>margin</label>
+							<input type="range" step="10" min="-80" max="200" value="40" name="margin" /><input type="checkbox" name="margin" value="auto" checked="" />
+						</li>
+					</ul>
+				</details>
+			</form>
+		</partie>
+		<partie>
+			<div style="align-self: flex-start;">
+				<h3>Les animations</h3>
+				<section>
+					<div class="animation-example interactive-model" contenteditable="true">
+						<img src="assets/img/nicolas.jpg" />
+					</div>
+				</section>
+			</div>
+			<form class="model-controls">
+				<ul>
+					<li>
+						<label for="">animation-name</label>
+						<select name="animation-name">
+							<option value="none" selected="">none</option>
+							<option value="glissement">glissement</option>
+							<option value="rebondissement">rebondissement</option>
+							<option value="saut">saut</option>
+							<option value="chute">chute</option>
+						</select>
+						
+					</li>
+					<li>
+						<label for="">animation-duration</label>
+						<input type="range" step="100" min="0" max="5000" value="0" name="animation-duration" />
+					</li>
+					<li>
+						<label for="">animation-timing-function</label>
+						<input type="text" value="linear" list="animation-timing-functions" name="animation-timing-function" />
+					</li>
+					<li>
+						<label for="">animation-delay</label>
+						<input type="range" step="100" min="0" max="5000" value="0" name="animation-delay" />
+					</li>
+					<li>
+						<label for="">animation-iteration-count</label>
+						<input type="range" step=".5" min="0" max="4" value="1" name="animation-iteration-count" /><input type="checkbox" name="animation-iteration-count" value="infinite" />
+					</li>
+					<li>
+						<label for="">animation-direction</label>
+						<select name="animation-direction">
+							<option value="normal" selected="">normal</option>
+							<option value="reverse">reverse</option>
+							<option value="alternate">alternate</option>
+							<option value="alternate-reverse">alternate-reverse</option>
+						</select>
+					</li>
+					<li>
+						<label for="">animation-fill-mode</label>
+						<select name="animation-fill-mode">
+							<option value="none" selected="" >none</option>
+							<option value="forwards">forwards</option>
+							<option value="backwards">backwards</option>
+							<option value="both">both</option>
+						</select>
+					</li>
+					<li>
+						<label for="">animation-play-state</label>
+						<select name="animation-play-state">
+							<option value="running" selected="">running</option>
+							<option value="paused">paused</option>
+						</select>
+					</li>
+				</ul>
+				<datalist id="animation-names">
+					<option value="glissement">glissement</option>
+					<option value="rebondissement">rebondissement</option>
+					<option value="saut">saut</option>
+					<option value="chute">chute</option>
+				</datalist>
+				<datalist id="animation-timing-functions">
+					<option value="linear">linear</option>
+					<option value="ease-in">ease-in</option>
+					<option value="ease-out">ease-out</option>
+					<option value="ease-in-out">ease-in-out</option>
+				</datalist>
+			</form>
+		</partie>
+		<partie>
+			<h2>Lecture subséquente</h2>
+			<ul>
+				<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Transforms">MDN — Transform</a></li>
+				<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Transforms/Utilisation_des_transformations_CSS">MDN — Utiliser les transformations</a></li>
+				<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/transform-function">MDN — Les fonctions de transformation</a></li>
+				<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/transition">MDN — Transition</a></li>
+				<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Transitions/Utiliser_transitions_CSS">MDN — Utiliser les transitions CSS</a></li>
+				<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/animation">MDN — Animation</a></li>
+				<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Animations_CSS/Utiliser_les_animations_CSS">MDN — Utiliser les animations CSS</a></li>
+				<li><a href="https://tympanus.net/codrops/css_reference/keyframes/">Codrops — Référence Keyframe</a></li>
+			</ul>
+		</partie>
+	</section>
+</cours>

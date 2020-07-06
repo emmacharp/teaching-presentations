@@ -1,0 +1,34 @@
+# L'accessibilité Web
+
+## Liens pratiques et références
+
+- [Outil en ligne de validation de l'accessibilité](https://achecker.ca/checker/index.php)
+- [Wiki — Accessibilité du Web](https://fr.wikipedia.org/wiki/Accessibilit%C3%A9_du_web)
+- [Règles pour l'accessibilité des contenus Web (WCAG) 2.0](https://www.w3.org/Translations/WCAG20-fr/)
+- [Règles d'accessibilité des sites publics de l'Ontario](https://www.ontario.ca/fr/page/comment-rendre-les-sites-web-accessibles)
+- [Règles d'accessibilité des sites publics du Québec](https://www.tresor.gouv.qc.ca/ressources-informationnelles/architecture-dentreprise-gouvernementale/standards-et-normes/accessibilite-du-web/)
+- [Liste d'outils de validation de l'accessibilité](https://www.w3.org/WAI/ER/tools/)
+- [Introduction à l'accessibilité sur le Web](https://webaim.org/intro/)
+- [WAI — Web Accessibility Initiative](https://www.w3.org/WAI/)
+- [A11yproject — Communauté de promotion de l'accessibilité Web](https://a11yproject.com/)
+- [Comment masquer du contenu visuellement de manière accessible ?](https://a11yproject.com/posts/how-to-hide-content/)
+- [Freedom Scientific — Fabricant du lecteur d'écran « JAWS »](https://www.freedomscientific.com/)
+- [NVAccess — Fabricant du lecteur d'écran NVDA](https://www.nvaccess.org/)
+- [Utiliser ARIA (en anglais)](https://w3c.github.io/using-aria/)
+- [Axe — Extension de validation des règles d'accessibilité](https://www.deque.com/axe/axe-for-web/)
+- [Wave — Extension de validation...](https://wave.webaim.org/extension/)
+
+
+## Notes en vrac
+
+« il n'est pas recommandé de se fixer le niveau AAA comme objectif à l'échelle de sites entiers car il n'est pas possible de satisfaire à tous les critères de succès du niveau AAA pour certains contenus... ». AA suffit.
+
+Le CSS peut avoir un grand impact sur l'accessibilité. Faites attention de ne pas « briser » le Web. Souvent, c'est assez pour être accessible.
+
+Réflechissez aux arbitrages... il y a toujours un échange... un gain vs. un perte. Faut être conscient de ce qui est échangé quand on prend une décision. Un avertissement est-il simple à régler ? Qu'est-ce que cela implique en frais de code ? Quelle est la valeur du changement pour l'usager versus son coût ? Tâchez toujours d'adresser les avertissements lorsque le coût ne s'avère pas prohibitif et le gain, substantiel.
+
+Il peut y avoir des dilemmes ! Clarté de développement, portabilité et modularité... ou bien schéma de document conforme et hautement accessible ?
+
+Prenez le temps d'utiliser le maximum des outils disponibles pour tester, évaluer et valider votre code.
+
+Vous allez voir passer et entendre parler de ARIA (Accessible Rich Internet Application). ARIA est un vocabulaire standardisé d'attributs voués aux dispositifs d'accessibilité (lecteurs d'écran, par exemple). Son utilisation est somme toute simple bien que peut supportée. Référez-vous au lien ci-haut à ce sujet pour en apprendre plus.

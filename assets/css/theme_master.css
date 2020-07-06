@@ -1,0 +1,32 @@
+:root {
+	color: var(--primary);
+	font-family: var(--font-base);
+	font-weight: 400;
+	font-size: var(--font-current);}
+* {
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	background: initial;
+	border: initial;
+	padding: initial;
+	margin: initial;
+	font-family: inherit;
+	line-height: initial;}
+
+html, body {
+	min-height: 100%;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;}
+html {
+	-webkit-overflow-scrolling: initial;}
+small {
+	font-size: .68125em;}
+
+@media screen and (max-width: 620px) {
+	:root {
+		--huge: var(--tallest);
+	}
+}
