@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="index.ui" ?>
+<index>
+<item name="./seance-effets.xml" id="1">Appliquer des effets en CSS</item>
+<item name="./seance-flexbox.xml" id="1">Utiliser le modèle Flexbox</item>
+<item name="./seance-fonctions.xml" id="1">Le concept de <strong>fonction</strong> en programmation Web</item>
+<item name="./seance-modele-de-boite.xml" id="1">Révision du modèle de boîte CSS</item>
+<item name="./seance-positionnement.xml" id="1">Positionner des éléments en CSS</item>
+</index>

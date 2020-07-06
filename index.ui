@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+	xmlns:ext="http://exslt.org/common"
+	exclude-result-prefixes="ext msxsl">
+
+<xsl:output indent="yes" media-type="text/html" method="html" encoding="UTF-8" />
+<xsl:variable name="special-characters" select="'/ áàâäéèêëíìîïóòôöúùûüçÁÀÂÄÉÈÊËÍÌÎÏÓÒÔÖÚÙÛÜÇABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;’?.()!:,'"/>
+<xsl:variable name="normalized-special-characters" select="'--aaaaeeeeiiiioooouuuuçaaaaeeeeiiiioooouuuuçabcdefghijklmnopqrstuvwxyz_'"/>
+
+<xsl:template match="/index">
+	<html>
+		<head>
+
+		</head>
+		<body>
+			<header>
+				<h1>Présentations</h1>
+			</header>
+
+			<main>
+				<ul>
+					<xsl:apply-templates />
+				</ul>
+				
+			</main>
+
+		</body>
+	</html>
+</xsl:template>
+
+<xsl:template match="item">
+	<li>
+		<a href="{@name}"><xsl:value-of select="."/></a>
+	</li>
+</xsl:template>
+
+</xsl:stylesheet>
