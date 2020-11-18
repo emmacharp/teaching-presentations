@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 html {
 	background-color: var(--primary);
 	scroll-behavior: smooth;
@@ -135,6 +137,8 @@ main>section>article>div {
 	height: 100%;
 }
 
+
+
 main>section>article>*:not([class]):not(p):not(h3):not(h5)>*:not([class]),
 main>section>article>:not(div),
 header>*:not([class]) {
@@ -247,6 +251,29 @@ span[title="Corps"]:hover:before {
 	margin: 80px 0;
 	border: 2px dashed var(--darkering);
 	font-size: 14px;
+	position: relative;
+}
+
+.previous-model:before, .next-model:before {
+	content: "Marges extérieures";
+	top: -80px;
+	bottom: -80px;
+	left: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+	white-space: nowrap;
+	outline: 2px dashed #ffecc2;
+	color: #ffecc2;
+	outline-offset: -2px;
+	text-align: center;
+	overflow: hidden;
+	opacity: .2;
+	line-height: 3;
+}
+
+.previous-model:hover:before, .next-model:hover:before {
+	opacity: .6;
 }
 
 .box-model {
@@ -266,8 +293,8 @@ span[title="Corps"]:hover:before {
 }
 
 .box-model.dimensions.forced {
-	--width: 300px;
-	--height: 300px;
+	--width: 10vw;
+	--height: 10vw;
 }
 
 .box-model.margin.forced {
@@ -283,16 +310,16 @@ span[title="Corps"]:hover:before {
 }
 
 .box-model>.content {
-
-
-	max-width: 100%;
+	/*max-width: 100%;*/
 	margin: var(--margin);
 	position: relative;
 	z-index: 1;
 	box-sizing: var(--box-sizing);
 	display: flex;
+
 	justify-content: center;
 	align-items: center;
+
 }
 
 .box-model:not(.dimensions)>.content {
@@ -308,8 +335,7 @@ span[title="Corps"]:hover:before {
 	background-color: var(--mauve);
 	background-clip: content-box;
 	height: var(--height);
-	max-width: var(--width);
-	width: auto;
+	width: var(--width);
 }
 
 .box-model.border>.content {
@@ -395,7 +421,7 @@ span[title="Corps"]:hover:before {
 	right: 0px;
 	bottom: 0px;
 	left: 0px;
-	max-width: calc(var(--width));
+	width: calc(var(--width));
 	max-height: calc(var(--height) + var(--border) var(--padding) / 2 + .5em);
 	padding: var(--padding);
 	border: var(--border) solid transparent;
@@ -417,7 +443,7 @@ span[title="Corps"]:hover:before {
 
 .box-model.margin:before {
 	content: "Marges extérieures";
-	max-width: calc(var(--width) + var(--margin) * 2);
+	width: calc(var(--width) + var(--margin) * 2);
 	padding-left: calc(var(--padding));
 	padding-right: calc(var(--padding));
 	border-left: var(--border) solid transparent;
@@ -474,6 +500,10 @@ hr {
 	opacity: .8;
 }
 
+.model-controls output:after {
+	content: ";";
+}
+
 .model-controls[id="transform"] label:after {
 	content: "(";
 	opacity: .8;
@@ -481,7 +511,7 @@ hr {
 
 .model-controls[id="transform"] output:after {
 	color: #FFFF3A;
-	content: ")";
+	content: ");";
 	opacity: .8;
 }
 
@@ -672,9 +702,11 @@ input:not([type="range"]):not([type="text"])[value]:not(:checked):hover~output {
 	float: var(--parent-float);
 	padding: var(--parent-padding);
 	overflow: var(--parent-overflow);
+}
 
+.float-example:hover {
 	outline: 1px dashed var(--tertiary);
-	outline-offset: 5px;
+	outline-offset: 3px;
 }
 
 .float-example img {
@@ -691,7 +723,7 @@ input:not([type="range"]):not([type="text"])[value]:not(:checked):hover~output {
 
 .float-example hr {
 	clear: var(--clear);
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid currentColor;
 	margin: var(--hr-margin);
 
 }

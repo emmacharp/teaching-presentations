@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="presentation.ui" ?>
 <cours>
-  <titre>Révision du modèle de boîte CSS</titre>
+  <titre>Présentation du modèle de boîte CSS</titre>
   <section name="Introduction">
     <partie>
       <div>
@@ -27,9 +27,7 @@
   <section name="Pourquoi ?">
     <partie>
       <h3>Pourquoi étudier le modèle de boîte CSS ?</h3>
-      <div>
-        <p>Parce qu'un langage aussi flexible et étendu que le CSS ne peut que réserver des surprises à ses utilisateurs. En l'explorant, vous rencontrerez des comportements vous apparaissant étranges... Des comportements que vous arriverez à comprendre et décortiquer si vous maîtrisez le modèle fondamental du CSS : LA BOÎTE.</p>
-      </div>
+      <p>Parce qu'un langage aussi flexible et étendu que le CSS ne peut que réserver des surprises à ses utilisateurs. En l'explorant, vous rencontrerez des comportements vous apparaissant étranges... Des comportements que vous arriverez à comprendre et décortiquer si vous maîtrisez le modèle fondamental du CSS : LA BOÎTE.</p>
     </partie>
   </section>
   <section name="Les composantes">
@@ -65,12 +63,12 @@
       <form class="model-controls">
         <ul>
           <li>
-            <label>Width</label>
+            <label>width</label>
             <input type="range" step="10" min="0" max="800" value="200" name="width"/>
             <input type="checkbox" name="width" value="auto" checked=""/>
           </li>
           <li>
-            <label>Height</label>
+            <label>height</label>
             <input type="range" step="10" min="0" max="400" value="100" name="height"/>
             <input type="checkbox" name="height" value="auto" checked=""/>
           </li>
@@ -81,7 +79,7 @@
       <div>
         <h3>Les bordures</h3>
         <section>
-          <div class="interactive-model box-model border dimensions forced">
+          <div class="interactive-model box-model border dimensions">
             <div class="content">
               <span contenteditable="true">Contenu</span>
             </div>
@@ -91,7 +89,7 @@
       <form class="model-controls">
         <ul>
           <li>
-            <label>Border</label>
+            <label>border</label>
             <input type="range" step="10" min="0" value="0" max="80" name="border"/>
           </li>
         </ul>
@@ -101,7 +99,7 @@
       <div>
         <h3>Les marges intérieures</h3>
         <section>
-          <div class="interactive-model box-model dimensions padding forced">
+          <div class="interactive-model box-model dimensions padding">
             <div class="content">
               <span contenteditable="true">Contenu</span>
             </div>
@@ -111,8 +109,8 @@
       <form class="model-controls">
         <ul>
           <li>
-            <label>Padding</label>
-            <input type="range" step="10" min="0" max="200" value="20" name="padding"/>
+            <label>padding</label>
+            <input type="range" step="10" min="0" max="200" value="0" name="padding"/>
           </li>
         </ul>
       </form>
@@ -123,7 +121,7 @@
         <div class="previous-model">
           <span>Bloc précédent</span>
         </div>
-        <div class="interactive-model box-model dimensions margin forced">
+        <div class="interactive-model box-model dimensions margin">
           <div class="content">
             <span contenteditable="true">Contenu</span>
           </div>
@@ -135,7 +133,7 @@
       <form class="model-controls">
         <ul>
           <li>
-            <label>Margin</label>
+            <label>margin</label>
             <input type="range" step="10" min="-100" max="200" value="0" name="margin"/>
             <input type="checkbox" name="margin" value="auto"/>
           </li>
@@ -162,34 +160,34 @@
       <form class="model-controls">
         <ul>
           <li>
-            <label>Box Sizing</label>
+            <label>box sizing</label>
             <select name="box-sizing">
               <option value="content-box">content-box</option>
               <option value="border-box">border-box</option>
             </select>
           </li>
           <li>
-            <label>Width</label>
+            <label>width</label>
             <input type="range" step="10" min="0" max="1600" value="200" name="width"/>
             <input type="checkbox" name="width" value="auto" checked=""/>
           </li>
           <li>
-            <label>Height</label>
+            <label>height</label>
             <input type="range" step="10" min="0" max="600" value="200" name="height"/>
             <input type="checkbox" name="height" value="auto" checked=""/>
           </li>
           <li>
-            <label>Padding</label>
+            <label>padding</label>
             <input type="range" step="10" min="0" max="200" value="0" name="padding"/>
           </li>
           <li>
-            <label>Border</label>
+            <label>border</label>
             <input type="range" step="10" min="0" value="0" max="80" name="border"/>
           </li>
           <li>
-            <label>Margin</label>
-            <input type="range" step="10" min="-100" max="200" value="40" name="margin"/>
-            <input type="checkbox" name="margin" value="auto" checked=""/>
+            <label>margin</label>
+            <input type="range" step="10" min="-100" max="200" value="0" name="margin"/>
+            <input type="checkbox" name="margin" value="auto"/>
           </li>
         </ul>
       </form>
@@ -215,81 +213,86 @@
         </nav>
       </div>
       <form class="model-controls">
-        <ul>
-          <li>
-            <h3>Conteneur</h3>
-          </li>
-          <hr/>
-          <li>
-            <label>Overflow</label>
-            <select name="parent-overflow">
-            	<option value="visible" selected="">visible</option>
-            	<option value="auto">auto</option>
-            	<option value="scroll">scroll</option>
-            	<option value="hidden">hidden</option>
-            </select>
-          </li>
-          <li>
-            <label>Width</label>
-            <input type="range" step="100" min="0" max="1000" value="500" name="parent-width"/>
-            <input type="checkbox" name="parent-width" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Height</label>
-            <input type="range" step="100" min="0" max="1000" value="500" name="parent-height"/>
-            <input type="checkbox" name="parent-height" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Padding</label>
-            <input type="range" step="10" min="0" max="200" value="0" name="parent-padding"/>
-          </li>
-          <li>
-            <label>Border</label>
-            <input type="range" step="10" min="0" value="0" max="80" name="parent-border"/>
-          </li>
-          <li>
-            <h3>Element</h3>
-          </li>
-          <hr/>
-          <li>
-            <label>Display</label>
-            <select name="display">
-            	<option value="inline" selected="">inline</option>
-            	<option value="inline-block">inline-block</option>
-            	<option value="block">block</option>
-            </select>
-          </li>
-          <li>
-            <label>Box-Sizing</label>
-            <select name="box-sizing">
-            	<option value="content-box" selected="">content-box</option>
-            	<option value="border-box">border-box</option>
-            </select>
-          </li>
-          <li>
-            <label>Width</label>
-            <input type="range" step="10" min="0" max="200" value="100" name="width"/>
-            <input type="checkbox" name="width" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Height</label>
-            <input type="range" step="10" min="0" max="200" value="10" name="height"/>
-            <input type="checkbox" name="height" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Padding</label>
-            <input type="range" step="1" min="0" max="20" value="0" name="padding"/>
-          </li>
-          <li>
-            <label>Line-height</label>
-            <input type="range" step="1" min="0" value="20" max="60" name="line-height"/>
-          </li>
-          <li>
-            <label>Margin</label>
-            <input type="range" step="10" min="-20" max="40" value="10" name="margin"/>
-            <input type="checkbox" name="margin" value="auto" checked=""/>
-          </li>
-        </ul>
+          <details open="">
+            <summary>
+              <span>Conteneur</span><hr/>
+            </summary>
+            <ul>
+              <li>
+                <label>overflow</label>
+                <select name="parent-overflow">
+                  <option value="visible" selected="">visible</option>
+                  <option value="auto">auto</option>
+                  <option value="scroll">scroll</option>
+                  <option value="hidden">hidden</option>
+                </select>
+              </li>
+              <li>
+                <label>width</label>
+                <input type="range" step="100" min="0" max="1000" value="500" name="parent-width"/>
+                <input type="checkbox" name="parent-width" value="auto" checked=""/>
+              </li>
+              <li>
+                <label>height</label>
+                <input type="range" step="100" min="0" max="1000" value="500" name="parent-height"/>
+                <input type="checkbox" name="parent-height" value="auto" checked=""/>
+              </li>
+              <li>
+                <label>padding</label>
+                <input type="range" step="10" min="0" max="200" value="0" name="parent-padding"/>
+              </li>
+              <li>
+                <label>border</label>
+                <input type="range" step="10" min="0" value="0" max="80" name="parent-border"/>
+              </li>
+            </ul>
+          </details>
+          
+          <details>
+            <summary>
+              <span>Element</span><hr/>
+            </summary>
+            <ul>
+                <li>
+                  <label>display</label>
+                  <select name="display">
+                    <option value="inline" selected="">inline</option>
+                    <option value="inline-block">inline-block</option>
+                    <option value="block">block</option>
+                  </select>
+                </li>
+                <li>
+                  <label>box-sizing</label>
+                  <select name="box-sizing">
+                    <option value="content-box" selected="">content-box</option>
+                    <option value="border-box">border-box</option>
+                  </select>
+                </li>
+                <li>
+                  <label>width</label>
+                  <input type="range" step="10" min="0" max="200" value="100" name="width"/>
+                  <input type="checkbox" name="width" value="auto" checked=""/>
+                </li>
+                <li>
+                  <label>height</label>
+                  <input type="range" step="10" min="0" max="200" value="10" name="height"/>
+                  <input type="checkbox" name="height" value="auto" checked=""/>
+                </li>
+                <li>
+                  <label>padding</label>
+                  <input type="range" step="1" min="0" max="20" value="0" name="padding"/>
+                </li>
+                <li>
+                  <label>line-height</label>
+                  <input type="range" step="1" min="0" value="20" max="60" name="line-height"/>
+                </li>
+                <li>
+                  <label>margin</label>
+                  <input type="range" step="10" min="-20" max="40" value="10" name="margin"/>
+                  <input type="checkbox" name="margin" value="auto" checked=""/>
+                </li>
+              </ul>
+          </details>
       </form>
     </partie>
     <partie>

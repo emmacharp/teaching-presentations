@@ -16,7 +16,7 @@ $(document).keyup(function(e) {
 			var name = t.children('input, select').attr('name');
 			var auto = t.children('input[checked]');
 			var preset = t.children('input').first().attr('value') || t.children('select').children('option').first().text();
-			var step = (t.children('input[type="range"]')) ? t.children('input[type="range"]').attr('step') : 1;
+			var step = (t.children('input[type="range"], input[type="number"]')) ? t.children('input[type="range"], input[type="number"]').attr('step') : 10; // valeur par défaut changée. était 1 à la base. manque de tests
 			var value = (auto.length != 0) ? auto.attr('value') : preset;
 			var parent_section = t.parents('article');
 			var interactive_model = parent_section.find('.interactive-model');
@@ -55,10 +55,10 @@ $(document).keyup(function(e) {
 
 		$('input, select').on('input', function(){
 			var t = $(this);
-			var value = (t.attr('type') == 'range') ? this.valueAsNumber : this.value;
+			var value = (t.attr('type') == 'range' || t.attr('type') == 'number') ? this.valueAsNumber : this.value;
 			var output = t.parents('li').find('output');
 			var property = t.attr('name');
-			var step = (t.attr('type') == 'range') ? t.attr('step') : 1;
+			var step = (t.attr('type') == 'range' || t.attr('type') == 'number') ? t.attr('step') : 10;  // valeur par défaut changée. était 1 à la base. manque de tests
 			var parent_section = t.parents('article');
 			var interactive_model = parent_section.find('.interactive-model');
 			var target = (t.parents('.targetable-controls').length) ? interactive_model.children() : interactive_model;
