@@ -104,7 +104,7 @@ Transitions
 
 }
 
-:root, * {
+:root {
 	--unit-in-px: calc(var(--unit-root) * 1px);
 	--unit-in-vw: calc(var(--unit-root) * 100 / 620 * 1vw);
 
