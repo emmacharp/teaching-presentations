@@ -11,46 +11,53 @@ $(document).keyup(function(e) {
 			$('body').append('<script src="http://localhost:35729/livereload.js"></script>');
 		}
 
+		function ChangeValueFactor(t) {
+			var value = (t.val() - t.attr('min')) / (t.attr('max') - t.attr('min'));
+			t.css('--value', value);
+		}
+
 		function setDefault(item, set_model = true) {
 			var t = item;
-			var name = t.children('input, select').attr('name');
-			var auto = t.children('input[checked]');
-			var preset = t.children('input').first().attr('value') || t.children('select').children('option').first().text();
-			var step = (t.children('input[type="range"]')) ? t.children('input[type="range"]').attr('step') : 1;
+			var name = t.find('input, select').attr('name');
+			var auto = t.find('input[checked]');
+			var preset = t.find('input').first().attr('value') || t.find('select').find('option').first().text();
+			var step = (t.find('input[type="range"]')) ? t.find('input[type="range"]').attr('step') : 1;
 			var value = (auto.length != 0) ? auto.attr('value') : preset;
 			var parent_section = t.parents('article');
 			var interactive_model = parent_section.find('.interactive-model');
 			var target = (t.parents('.targetable-controls').length) ? interactive_model.children() : interactive_model;
 
-			var property = t.children('input, select').attr('name');
+			var property = t.find('input, select').attr('name');
 
-			if(t.children().is('[min="-360"][max="360"]')) {
+			if(t.find('input').is('[min="-360"][max="360"]')) {
 				value += 'deg';
 			}
-			else if(t.children().is('[min="0"][max="5000"]')) {
+			else if(t.find('input').is('[min="0"][max="5000"]')) {
 				value += 'ms';
 			}
-			else if(!isNaN(value) && Number.isInteger(parseFloat(step)) && parseInt(t.children('input').attr('max')) > 10) {
+			else if(!isNaN(value) && Number.isInteger(parseFloat(step)) && parseInt(t.find('input').attr('max')) > 10) {
 				value += 'px';
 			}
 
 			if(t.find('output').length == 0) {
-				t.find('label').after('<output for="'+name+'"></output>');
+				t.find('div').prepend('<output for="'+name+'"></output>');
 			}
 			t.find('input').each(function(){
 				$(this).val($(this).attr('value'));
 			});
-			t.find('output').html(value);
+			t.find('output').html(value + ';');
 
 			if (set_model == true) {
 				target.css('--'+property, value);
 			}
 		}
 
-		$('.model-controls li:has(input, select)').each(function() {
-			
-			setDefault($(this));
+		$('.model-controls input[type="range"]').each(function() {
+			ChangeValueFactor($(this));
+		});
 
+		$('.model-controls li:has(input, select)').each(function() {
+			setDefault($(this));
 		});
 
 		$('input, select').on('input', function(){
@@ -80,7 +87,7 @@ $(document).keyup(function(e) {
 				value += 'px';
 			}
 
-			output.html(value);
+			output.html(value + ';');
 
 			if (t.parents('details').is('.targeted')) {
 				target.filter('.selected').css('--'+property, value);
@@ -88,6 +95,10 @@ $(document).keyup(function(e) {
 				target.css('--'+property, value);
 			}
 
+		});
+
+		$('input[type="range"]').on('mouseup keyup', function () {
+			ChangeValueFactor($(this));
 		});
 
 		$('input, summary', '.model-controls').on('focus', function(){
@@ -105,7 +116,6 @@ $(document).keyup(function(e) {
 			var parent_section = t.parents('article');
 			var model_controls = parent_section.find('.model-controls');
 			var targeted_controls = model_controls.find('.targetable-controls')
-			
 			var style_string = t.attr('style') + t.parents('.interactive-model').attr('style');
 			// var styles = style_string.slice(0, style_string.length - 1).split(';').map(x => x.split(':'))
 
@@ -115,7 +125,7 @@ $(document).keyup(function(e) {
 
 			if (style_string !== undefined && style_string != '') {
 				var parts = style_string.split(";");
-				
+
 				for (var i=0;i<parts.length - 1;i++) {
 					var subParts = parts[i].split(':');
 					var name = subParts[0].replace('--', '').replace(' ', '');
@@ -125,7 +135,7 @@ $(document).keyup(function(e) {
 
 					if (refInputType == 'radio' || refInputType == 'checkbox') {
 						targeted_controls.find('input[name="' + name + '"][value = "' + value + '"]').prop('checked', true);
-					} 
+					}
 
 					else if (refInputType == 'range' || refInputType == 'text') {
 						targeted_controls.find('input[name="' + name + '"]').first().val(value);
@@ -137,7 +147,7 @@ $(document).keyup(function(e) {
 
 			if(!event.shiftKey == 1) {
 				t.siblings().removeClass('selected');
-			} 
+			}
 
 			if(t.is('.selected') && t.siblings('.selected').length == 0) {
 				targeted_controls.removeClass('targeted');
