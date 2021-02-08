@@ -1,3 +1,6 @@
+@charset "utf-8";
+
+
 html {
 	background-color: var(--primary);
 	scroll-behavior: smooth;
@@ -72,34 +75,12 @@ ul {
 	list-style: none;
 }
 
-html.font-face-bug-workaround,
-html.font-face-bug-workaround>body {
+html {
 	scroll-snap-type: y proximity;
 }
 
 body::-webkit-scrollbar {
 	width: 0px;
-}
-
-body::-webkit-scrollbar, 
-body>header::-webkit-scrollbar,
-main>section>article>*::-webkit-scrollbar {
-	/*width: 0px;*/
-	/*border: 2px solid black*/
-}
-
-body::-webkit-scrollbar-thumb, 
-body>header::-webkit-scrollbar-thumb,
-main>section>article>*::-webkit-scrollbar-thumb {
-	/*background-color: black;
-	border: 10px solid black;*/
-}
-
-body::-webkit-scrollbar-track, 
-body>header::-webkit-scrollbar-track,
-main>section>article>*::-webkit-scrollbar-track {
-	/*background-color: var(--primary);
-	border: 2px solid black*/
 }
 
 body>header {
@@ -283,8 +264,6 @@ span[title="Corps"]:hover:before {
 }
 
 .box-model>.content {
-
-
 	max-width: 100%;
 	margin: var(--margin);
 	position: relative;
@@ -318,6 +297,8 @@ span[title="Corps"]:hover:before {
 
 .box-model>.content>* {
 	display: block;
+	/* À tester et expérimenter */
+		max-width: 100%;
 }
 
 .model-controls {
@@ -325,6 +306,7 @@ span[title="Corps"]:hover:before {
 	height: 100vh;
 	box-sizing: border-box;
 	font-family: var(--font-alt);
+	font-weight: 600;
 	padding: var(--spacing-thin);
 	background-color: #011833;
 	border-radius: 3px;
@@ -350,28 +332,63 @@ span[title="Corps"]:hover:before {
 .model-controls select,
 .model-controls [type=text],
 .model-controls [type=number] {
-	min-width: 8em; 
 	background-color: transparent;
-	color: white;
+	color: #AFE124;
+	margin-left: -.13625em;
+	position: absolute;
+	left: 0;
+}
+
+.model-controls [type=range] {
+	cursor: ew-resize;
+}
+
+.model-controls [type=range] {
+	left: calc(1em + 2em * var(--value) / 1);
+	transform: translateX(calc(-100% * var(--value, 0)));
+}
+
+.model-controls select:hover:not(:focus) {
+	cursor: context-menu;
+}
+.model-controls li {
+	user-select: none;
+	position: relative;
+}
+
+.model-controls li>div {
+	position: relative;
+	display: inline-block;
+	user-select: none;
+}
+
+.model-controls li :is(output, span, label) {
+ 	user-select: all;
+ }  
+
+.model-controls input:focus,
+.model-controls select:focus {
+	outline: 0;
+}	
+
+.model-controls select option {
+	color: initial;
 }
 
 .model-controls select {
-	min-width: 10em;
+	padding-right: 1em;
 }
 
 .model-controls ul {
-	display: table;
 	vertical-align: middle;
 	border-spacing: 8px;
 }
 
 .model-controls ul>li {
-	display: table-row;
 	vertical-align: middle;
 }
 
 .model-controls ul>li>* {
-	display: table-cell;
 	vertical-align: middle;
 }
 
@@ -458,11 +475,12 @@ hr {
 .model-controls label {
 	display: inline-block;
 	color: #FFFF3A;
-	font-weight: 500;
+	/* font-weight: 500; */
 	white-space: nowrap;
 	border-radius: 2px;
 	position: relative;
 	vertical-align: middle;
+	margin-right: .25em;;
 }
 
 .model-controls li>div {
@@ -470,7 +488,6 @@ hr {
 }
 
 .model-controls label:after {
-	content: ": ";
 	opacity: .8;
 }
 
@@ -485,13 +502,26 @@ hr {
 	opacity: .8;
 }
 
-.model-controls li:not(:hover):not(:focus-within) label~:not(output) {
-	filter: grayscale(1) brightness(.4);
+.model-controls li div :not(output) {
+	opacity: 0;
+
 }
 
+.model-controls:focus-within li:not(:focus-within):not(:hover),
+.model-controls ul:hover li:not(:hover) {
+	filter: grayscale(1);
+}
+
+.model-controls li:focus-within output {
+	text-decoration: underline dotted;
+	text-underline-offset: 2px;
+}
+
+.model-controls output {
+	pointer-events: none;
+}
 
 .model-controls li:focus-within>:first-child:before {
-	content: "";
 	background-color: var(--lighting);
 	border-radius: 50%;
 	position: absolute;
@@ -501,11 +531,6 @@ hr {
 	width: .5em;
 	height: .5em;
 	display: block;
-}
-
-.model-controls li:hover label,
-.model-controls li:focus-within label {
-	color: orange;
 }
 
 .model-controls>details>summary {
@@ -528,9 +553,7 @@ hr {
 	color: var(--tertiary);
 	font-size: var(--font-shortest);
 	outline: none;
-	font-weight: 500;
 	display: flex;
-	/*padding-top: var(--spacing-nano);*/
 	padding-bottom: var(--spacing-nano);
 	align-items: baseline;
 }
@@ -589,9 +612,6 @@ details[open]>summary:hover:after {
 .model-controls ul>li>* {
 	vertical-align: middle;
 }
-.model-controls ul>li>*:not(label)+* {
-	margin-left: var(--spacing-micro);
-}
 
 .display-roles {
 	--display: inline;
@@ -628,28 +648,31 @@ details[open]>summary:hover:after {
 	line-height: var(--line-height);
 }
 
-input:not([type="range"])[value] {
+.model-controls input[type=checkbox] {
 	position: relative;
+	appearance: none;
+	padding-left: 1em;
 }
 
 input:not([type="range"])[value]:before {
 	content: attr(value);
-	position: absolute;
-	pointer-events: none;
-	right: 0;
-	white-space: nowrap;
-	color: aqua;
-	font-weight: 600;
-	margin-top: -2.5em;
-	padding: var(--spacing-pico);
-	background-color: black;
-	border-radius: 4px;
+	cursor: pointer;
 }
 
-input:not([type="range"]):not([type="text"])[value]:not(:hover):before,
-input:not([type="range"]):not([type="text"])[value]:checked:before,
-input:not([type="range"]):not([type="text"])[value]:not(:checked):hover~output {
-	opacity: 0;	
+li:focus-within input[type=checkbox]:not(:checked, :focus),
+li:hover input[type=checkbox]:not(:checked, :focus) {
+	opacity: .4;	
+}
+
+input[type=checkbox]:checked {
+	opacity: 0;
+	pointer-events: none;
+}
+
+input[type=checkbox]:not(:checked):hover,
+input[type=checkbox]:not(:checked):focus {
+	color: #AFE124;
+	opacity: 1;
 }
 
 .float-example {
@@ -691,7 +714,7 @@ input:not([type="range"]):not([type="text"])[value]:not(:checked):hover~output {
 
 .float-example hr {
 	clear: var(--clear);
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid currentColor;
 	margin: var(--hr-margin);
 
 }
@@ -744,12 +767,6 @@ input:not([type="range"]):not([type="text"])[value]:not(:checked):hover~output {
 
 output {
 	display: inline-block;
-	max-width: 9rem;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	clear: right;
-	font-weight: 500;
 	color: #AFE124;
 	position: relative;
 	vertical-align: middle;
