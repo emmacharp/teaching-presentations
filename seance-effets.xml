@@ -5,17 +5,6 @@
 	<titre>Appliquer des effets en CSS</titre>
 	<section name="Introduction">
 		<partie>
-			<!-- <div> -->
-				<h5>Qu'allons-nous voir dans les deux prochains cours ?</h5>
-				<ol>
-					<!-- <li>Pourquoi appliquer des effets ?</li> -->
-					<li>Les transformations</li>
-					<li>Les transitions et leur déclenchement</li>
-					<li>Les animations</li>
-				</ol>
-			<!-- </div> -->
-		</partie>
-		<partie>
 			<h3>Pourquoi appliquer des effets ?</h3>
 			<p>Pour contribuer à la création d'une expérience qui soit à la fois dynamique, fluide et remarquable.
 				<br/><br/>
@@ -55,24 +44,20 @@
 						<hr/>
 					</summary>
 					<ul>
-						<li><div>
+						<li>
 							<label>rotate</label>
-						</div>
 							<input type="range" step="10" min="-360" max="360" value="0" name="rotate" /><!-- <input type="checkbox" name="rotate" value="0" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>rotateY</label>
-						</div>
 							<input type="range" step="10" min="-360" max="360" value="0" name="rotateY" /><!-- <input type="checkbox" name="rotateY" value="0" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>rotateX</label>
-						</div>
 							<input type="range" step="10" min="-360" max="360" value="0" name="rotateX" /><!-- <input type="checkbox" name="rotateX" value="0" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>rotateZ</label>
-						</div>
 							<input type="range" step="10" min="-360" max="360" value="0" name="rotateZ" /><!-- <input type="checkbox" name="rotateZ" value="0" checked="" /> -->
 						</li>
 					</ul>
@@ -83,24 +68,20 @@
 						<hr/>
 					</summary>
 					<ul>
-						<li><div>
+						<li>
 							<label>scale</label>
-						</div>
 							<input type="range" step=".1" min="-2" max="2" value="1" name="scale" /><!-- <input type="checkbox" name="scale" value="1" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>scaleY</label>
-						</div>
 							<input type="range" step=".1" min="-2" max="2" value="1" name="scaleY" /><!-- <input type="checkbox" name="scaleY" value="1" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>scaleX</label>
-						</div>
 							<input type="range" step=".1" min="-2" max="2" value="1" name="scaleX" /><!-- <input type="checkbox" name="scaleX" value="1" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>scaleZ</label>
-						</div>
 							<input type="range" step=".1" min="-2" max="2" value="1" name="scaleZ" /><!-- <input type="checkbox" name="scaleZ" value="1" checked="" /> -->
 						</li>
 					</ul>
@@ -111,19 +92,16 @@
 						<hr/>
 					</summary>
 					<ul>
-						<li><div>
+						<li>
 							<label>skew</label>
-						</div>
 							<input type="range" step="10" min="-360" max="360" value="0" name="skew" /><!-- <input type="checkbox" name="skew" value="0" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>skewY</label>
-						</div>
 							<input type="range" step="10" min="-360" max="360" value="0" name="skewY" /><!-- <input type="checkbox" name="skewY" value="0" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>skewX</label>
-						</div>
 							<input type="range" step="10" min="-360" max="360" value="0" name="skewX" /><!-- <input type="checkbox" name="skewX" value="0" checked="" /> -->
 						</li>
 					</ul>
@@ -134,24 +112,20 @@
 						<hr/>
 					</summary>
 					<ul>
-						<li><div>
+						<li>
 							<label>translate</label>
-						</div>
 							<input type="range" step="10" min="-100" max="100" value="0" name="translate" /><!-- <input type="checkbox" name="translate" value="0" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>translateY</label>
-						</div>
 							<input type="range" step="10" min="-100" max="100" value="0" name="translateY" /><!-- <input type="checkbox" name="translateY" value="0" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>translateX</label>
-						</div>
 							<input type="range" step="10" min="-100" max="100" value="0" name="translateX" /><!-- <input type="checkbox" name="translateX" value="0" checked="" /> -->
 						</li>
-						<li><div>
+						<li>
 							<label>translateZ</label>
-						</div>
 							<input type="range" step="10" min="-100" max="100" value="0" name="translateZ" /><!-- <input type="checkbox" name="translateZ" value="0" checked="" /> -->
 						</li>
 					</ul>
