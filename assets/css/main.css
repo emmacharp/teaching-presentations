@@ -360,6 +360,7 @@ span[title="Corps"]:hover:before {
 	position: relative;
 	display: inline-block;
 	user-select: none;
+	word-spacing: -1em;
 }
 
 .model-controls li :is(output, span, label) {
@@ -480,29 +481,19 @@ hr {
 	border-radius: 2px;
 	position: relative;
 	vertical-align: middle;
-	margin-right: .25em;;
-}
-
-.model-controls li>div {
-	min-width: 9rem;
-}
-
-.model-controls label:after {
-	opacity: .8;
 }
 
 .model-controls[id="transform"] label:after {
 	content: "(";
-	opacity: .8;
 }
 
 .model-controls[id="transform"] output:after {
 	color: #FFFF3A;
 	content: ")";
-	opacity: .8;
 }
 
-.model-controls li div :not(output) {
+.model-controls li div input, 
+.model-controls li div select {
 	opacity: 0;
 
 }
@@ -769,7 +760,7 @@ output {
 	display: inline-block;
 	color: #AFE124;
 	position: relative;
-	vertical-align: middle;
+	vertical-align: baseline;
 }
 
 .grid-example p {
