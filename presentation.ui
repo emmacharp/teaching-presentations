@@ -46,9 +46,9 @@
 	</article>
 </xsl:template>
 
-<xsl:template match="form[@class='model-controls']//label">
+<xsl:template match="form[@class='model-controls'][not(@id='transform')]//label">
 	<label>
-		<xsl:value-of select="node()" /><span>:</span>	
+		<xsl:value-of select="node()" /><span>: </span>
 	</label>
 </xsl:template>
 
@@ -56,6 +56,9 @@
 
 <xsl:template match="input[1]|select[1]">
 	<div>
+		<xsl:if test="ancestor::form[not(@id='transform')]">
+			<span>;</span>
+		</xsl:if>
 		<xsl:copy-of select="."></xsl:copy-of>
 		<xsl:copy-of select="following-sibling::*"></xsl:copy-of>
 	</div>
