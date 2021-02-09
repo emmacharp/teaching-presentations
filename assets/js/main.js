@@ -45,7 +45,7 @@ $(document).keyup(function(e) {
 			t.find('input').each(function(){
 				$(this).val($(this).attr('value'));
 			});
-			t.find('output').html(value + ';');
+			t.find('output').html(value);
 
 			if (set_model == true) {
 				target.css('--'+property, value);
@@ -87,7 +87,7 @@ $(document).keyup(function(e) {
 				value += 'px';
 			}
 
-			output.html(value + ';');
+			output.html(value);
 
 			if (t.parents('details').is('.targeted')) {
 				target.filter('.selected').css('--'+property, value);
