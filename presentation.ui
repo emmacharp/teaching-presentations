@@ -54,7 +54,7 @@
 
 <xsl:template match="input|select"></xsl:template>
 
-<xsl:template match="input[1]|select[1]">
+<xsl:template match="*[local-name() = 'select' or local-name() = 'input'][1]">
 	<div>
 		<xsl:if test="ancestor::form[not(@id='transform')]">
 			<span>;</span>
