@@ -136,13 +136,13 @@
 							<ul>
 								<li><label>align-self</label>
 									<select name="align-self">
+										<option value="auto">auto</option>
 										<option value="stretch">stretch</option>
 										<option value="baseline">baseline</option>
 										<option value="flex-start">flex-start</option>
 										<option value="flex-end">flex-end</option>
 										<option value="center">center</option>
 									</select>
-									<input type="checkbox" name="align-self" value="auto" checked="" />
 								</li>
 								<li><label>flex-basis</label>
 									<input type="text" name="flex-basis" /><input type="checkbox" name="flex-basis" value="auto" checked="" />
