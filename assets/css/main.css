@@ -334,13 +334,12 @@ span[title="Corps"]:hover:before {
 .model-controls [type=number] {
 	background-color: transparent;
 	color: #AFE124;
-	margin-left: -.13625em;
 	position: absolute;
 	left: 0;
 }
 
 .model-controls [type=range] {
-	cursor: ew-resize;
+	cursor: col-resize;
 }
 
 .model-controls [type=range] {
@@ -503,9 +502,15 @@ hr {
 	filter: grayscale(1);
 }
 
+.model-controls li:hover output,
 .model-controls li:focus-within output {
 	text-decoration: underline dotted;
 	text-underline-offset: 2px;
+}
+
+.model-controls input[type=text]:focus {
+	opacity: 1;
+	background-color: #011833;
 }
 
 .model-controls output {
