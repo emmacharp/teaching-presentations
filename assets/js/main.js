@@ -1,4 +1,3 @@
-const body = document.body;
 
 document.addEventListener('keyup', function(e){
 	if(e.code === 'Escape') body.classList.toggle('debug');
@@ -6,7 +5,10 @@ document.addEventListener('keyup', function(e){
 
 (function ($) {
 	'use strict';
-	var ready = function () {
+	
+	const body = document.body;
+	
+	const ready = function () {
 		// ajouter livereload seulement si je suis en local
 		if(window.location.href.indexOf('.local') > -1 || window.location.href.indexOf('localhost')) {
 			const script = document.createElement('script');
@@ -20,18 +22,18 @@ document.addEventListener('keyup', function(e){
 		}
 
 		function setDefault(item, set_model = true) {
-			var t = item;
-			var field = t.querySelector('input, select');
-			var name = field.getAttribute('name');
-			var auto = t.querySelector('input[checked]');
-			var preset = (field.tagName == 'INPUT') ? field.getAttribute('value') : field.querySelector('option').textContent;
-			var step = (t.querySelector('input[type="range"]')) ? t.querySelector('input[type="range"]').getAttribute('step') : 1;
-			var value = (auto) ? auto.getAttribute('value') : preset;
-			var parent_section = t.closest('article');
-			var interactive_model = parent_section.querySelectorAll('.interactive-model');
-			var target = (t.closest('.targetable-controls')) ? interactive_model[0].children : interactive_model;
+			const t = item;
+			const field = t.querySelector('input, select');
+			const name = field.getAttribute('name');
+			const auto = t.querySelector('input[checked]');
+			const preset = (field.tagName == 'INPUT') ? field.getAttribute('value') : field.querySelector('option').textContent;
+			const step = (t.querySelector('input[type="range"]')) ? t.querySelector('input[type="range"]').getAttribute('step') : 1;
+			let value = (auto) ? auto.getAttribute('value') : preset;
+			const parent_section = t.closest('article');
+			const interactive_model = parent_section.querySelectorAll('.interactive-model');
+			const target = (t.closest('.targetable-controls')) ? interactive_model[0].children : interactive_model;
 
-			var property = t.querySelector('input, select').getAttribute('name');
+			const property = t.querySelector('input, select').getAttribute('name');
 
 			if(field.matches('[min="-360"][max="360"]')) {
 				value += 'deg';
@@ -44,7 +46,7 @@ document.addEventListener('keyup', function(e){
 			}
 
 			if(!t.querySelector('output')) {
-				var output = document.createElement('output');
+				const output = document.createElement('output');
 				output.setAttribute('for', name);
 				t.querySelector('div').prepend(output);
 			}
@@ -64,7 +66,7 @@ document.addEventListener('keyup', function(e){
 			changeValueFactor(input);
 		});
 
-		var controlItems = document.querySelectorAll('.model-controls li');
+		const controlItems = document.querySelectorAll('.model-controls li');
 
 		controlItems.forEach((el) => {
 			if (el.querySelector('select, input')) {
@@ -74,14 +76,14 @@ document.addEventListener('keyup', function(e){
 
 		document.querySelectorAll('input, select').forEach((item) => {
 			item.addEventListener('input', function(e){
-				var t = e.target;
-				var value = (t.getAttribute('type') == 'range') ? this.valueAsNumber : this.value;
-				var output = t.closest('li').querySelector('output');
-				var property = t.getAttribute('name');
-				var step = (t.getAttribute('type') == 'range') ? t.getAttribute('step') : 1;
-				var parent_section = t.closest('article');
-				var interactive_model = parent_section.querySelectorAll('.interactive-model');
-				var target = (t.closest('.targetable-controls')) ? interactive_model[0].children : interactive_model;
+				const t = e.target;
+				let value = (t.getAttribute('type') == 'range') ? this.valueAsNumber : this.value;
+				const output = t.closest('li').querySelector('output');
+				const property = t.getAttribute('name');
+				const step = (t.getAttribute('type') == 'range') ? t.getAttribute('step') : 1;
+				const parent_section = t.closest('article');
+				const interactive_model = parent_section.querySelectorAll('.interactive-model');
+				const target = (t.closest('.targetable-controls')) ? interactive_model[0].children : interactive_model;
 				if(t.matches('[type="range"],[type="text"]') && t.closest('li').querySelector('input[type="checkbox"]')) {
 					t.closest('li').querySelector('input[type="checkbox"]').checked = false;
 				}
@@ -126,18 +128,18 @@ document.addEventListener('keyup', function(e){
 			});
 		});
 
-		var selectableItems = document.querySelector('.selectable-items');
+		const selectableItems = document.querySelector('.selectable-items');
 		if(selectableItems) {
 			document.querySelector('.selectable-items').addEventListener('click', function(e) {
 				if(e.target.closest('p')) {
-					var t = e.target;
-					var parent_section = t.closest('article');
-					var model_controls = parent_section.querySelector('.model-controls');
-					var targeted_controls = model_controls.querySelector('.targetable-controls');
-					var style_string = t.getAttribute('style') + t.closest('.interactive-model').getAttribute('style');
+					const t = e.target;
+					const parent_section = t.closest('article');
+					const model_controls = parent_section.querySelector('.model-controls');
+					const targeted_controls = model_controls.querySelector('.targetable-controls');
+					const style_string = t.getAttribute('style') + t.closest('.interactive-model').getAttribute('style');
 					// var styles = style_string.slice(0, style_string.length - 1).split(';').map(x => x.split(':'))
 
-					var controlItems = targeted_controls.querySelectorAll('li');
+					const controlItems = targeted_controls.querySelectorAll('li');
 					// $('li:has(input)', targeted_controls).each(function() {
 					controlItems.forEach((el) => {
 						if(el.querySelector('input')) {
@@ -146,15 +148,15 @@ document.addEventListener('keyup', function(e){
 					});
 
 					if (style_string !== undefined && style_string != '') {
-						var parts = style_string.split(";");
+						const parts = style_string.split(";");
 
-						for (var i=0;i<parts.length - 1;i++) {
-							var subParts = parts[i].split(':');
-							var name = subParts[0].replace('--', '').replace(' ', '');
-							var value = subParts[1];
-							var target_input = targeted_controls.querySelector('input[name="' + name + '"]');
-							var refInputType = (target_input) ? target_input.getAttribute('type') : null;
-							var target_output = targeted_controls.querySelector('input[name="' + name + '"]');
+						for (let i = 0; i < parts.length - 1; i += 1) {
+							const subParts = parts[i].split(':');
+							const name = subParts[0].replace('--', '').replace(' ', '');
+							const value = subParts[1];
+							const target_input = targeted_controls.querySelector('input[name="' + name + '"]');
+							const refInputType = (target_input) ? target_input.getAttribute('type') : null;
+							const target_output = targeted_controls.querySelector('input[name="' + name + '"]');
 							if (refInputType == 'radio' || refInputType == 'checkbox') {
 								targeted_controls.querySelector('input[name="' + name + '"][value = "' + value + '"]').checked = true;
 							}
