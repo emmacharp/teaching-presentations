@@ -16,108 +16,105 @@ document.addEventListener('keyup', function(e){
 			body.append(script);
 		}
 
+		// Permet de déplacer les input range pour que leur poignée soit toujours centrée dans le output
 		function changeValueFactor(t) {
 			const value = (t.value - t.getAttribute('min')) / (t.getAttribute('max') - t.getAttribute('min'));
 			t.style.setProperty('--value', value);
 		}
 
+		// Générer toutes les propriétés relatives au champ utilisé
+		function getItemProps(item) {
+			const t = item.closest('li');
+			t.field = t.querySelector('input, select');
+			t.name = t.field.getAttribute('name');
+			t.auto = t.querySelector('input[checked]');
+			t.preset = t.field.value;
+			t.step = (t.querySelector('input[type="range"]')) ? t.querySelector('input[type="range"]').getAttribute('step') : 1;
+			t.val = (t.auto && t.auto.checked) ? t.auto.getAttribute('value') : t.preset;
+			t.parent_section = t.closest('article');
+			t.interactive_model = t.parent_section.querySelectorAll('.interactive-model');
+			t.target = (t.closest('.targetable-controls')) ? t.interactive_model[0].children : t.interactive_model;
+
+
+			if(t.field.matches('[type="checkbox"]:not(:checked)')) {
+				t.val = t.querySelector('input[type="range"]').value;
+			}
+			if(t.field.matches('[min="-360"][max="360"]')) {
+				t.val += 'deg';
+			}
+			else if(t.field.matches('[min="0"][max="5000"]')) {
+				t.val += 'ms';
+			}
+			else if(!isNaN(t.val) && Number.isInteger(parseFloat(t.step)) && t.querySelector('input') && parseInt(t.querySelector('input').getAttribute('max')) > 10) {
+				t.val += 'px';
+			}
+
+			return t;
+		}
+
+		// Générer les valeurs par défaut au chargement
 		function setDefault(item, set_model = true) {
-			const t = item;
-			const field = t.querySelector('input, select');
-			const name = field.getAttribute('name');
-			const auto = t.querySelector('input[checked]');
-			const preset = (field.tagName == 'INPUT') ? field.getAttribute('value') : field.querySelector('option').textContent;
-			const step = (t.querySelector('input[type="range"]')) ? t.querySelector('input[type="range"]').getAttribute('step') : 1;
-			let value = (auto) ? auto.getAttribute('value') : preset;
-			const parent_section = t.closest('article');
-			const interactive_model = parent_section.querySelectorAll('.interactive-model');
-			const target = (t.closest('.targetable-controls')) ? interactive_model[0].children : interactive_model;
-
-			const property = t.querySelector('input, select').getAttribute('name');
-
-			if(field.matches('[min="-360"][max="360"]')) {
-				value += 'deg';
-			}
-			else if(field.matches('[min="0"][max="5000"]')) {
-				value += 'ms';
-			}
-			else if(!isNaN(value) && Number.isInteger(parseFloat(step)) && parseInt(t.querySelector('input').getAttribute('max')) > 10) {
-				value += 'px';
-			}
+			const t = getItemProps(item);
 
 			if(!t.querySelector('output')) {
 				const output = document.createElement('output');
-				output.setAttribute('for', name);
+				output.setAttribute('for', t.name);
 				t.querySelector('div').prepend(output);
 			}
 			[...t.querySelectorAll('input')].forEach((field) => {
 				field.value = field.getAttribute('value');
 			});
-			t.querySelector('output').innerHTML = value;
+			t.querySelector('output').innerHTML = t.val;
 
-			if (set_model == true) {
-				[...target].forEach((element) => {
-					element.style.setProperty('--'+property, value);
+
+			if (set_model === true) {
+				[...t.target].forEach((element) => {
+					element.style.setProperty('--' + t.name, t.val);
 				});
 			}
 		}
 
+		// Déplacer les range pour les centrer leur poignée dans le output
 		[...document.querySelectorAll('.model-controls input[type="range"]')].forEach((input) => {
 			changeValueFactor(input);
 		});
 
-		const controlItems = document.querySelectorAll('.model-controls li');
 
+		// Appliquer les valeurs par défaut au chargement
+		const controlItems = document.querySelectorAll('.model-controls li');
 		controlItems.forEach((el) => {
 			if (el.querySelector('select, input')) {
 				setDefault(el);
 			}
 		});
 
+		// Modifier les propriétés des items au changement de valeur des champs
 		document.querySelectorAll('input, select').forEach((item) => {
 			item.addEventListener('input', function(e){
-				const t = e.target;
-				let value = (t.getAttribute('type') == 'range') ? this.valueAsNumber : this.value;
-				const output = t.closest('li').querySelector('output');
-				const property = t.getAttribute('name');
-				const step = (t.getAttribute('type') == 'range') ? t.getAttribute('step') : 1;
-				const parent_section = t.closest('article');
-				const interactive_model = parent_section.querySelectorAll('.interactive-model');
-				const target = (t.closest('.targetable-controls')) ? interactive_model[0].children : interactive_model;
-				if(t.matches('[type="range"],[type="text"]') && t.closest('li').querySelector('input[type="checkbox"]')) {
-					t.closest('li').querySelector('input[type="checkbox"]').checked = false;
+				if(e.target.matches('[type="range"],[type="text"]') && e.target.closest('li').querySelector('input[type="checkbox"]')) {
+					e.target.closest('li').querySelector('input[type="checkbox"]').checked = false;
 				}
+				const t = getItemProps(e.target);
+				const output = t.querySelector('output');
+				
+				output.innerHTML = t.val;
 
-				if(t.matches('[type="checkbox"]:not(:checked)')) {
-					value = t.closest('li').querySelector('input[type="range"]').value;
-				}
-
-				if(t.matches('[min="-360"][max="360"]')) {
-					value += 'deg';
-				}
-				else if(t.matches('[min="0"][max="5000"]')) {
-					value += 'ms';
-				}
-				else if(!isNaN(value) && Number.isInteger(parseFloat(step)) && parseFloat(step) >= 10) {
-					value += 'px';
-				}
-
-				output.innerHTML = value;
 
 					if (t.closest('.targeted')) {
-						[...target].forEach((element) => {
+						[...t.target].forEach((element) => {
 							if(element.matches('.selected')) {
-								element.style.setProperty('--'+property, value);
+								element.style.setProperty('--'+t.name, t.val);
 							}
 						});
 					} else {
-						[...target].forEach((element) => {
-							element.style.setProperty('--'+property, value);
+						[...t.target].forEach((element) => {
+							element.style.setProperty('--'+t.name, t.val);
 						});
 					}
 			});
 		});
 
+		// Déplacer les range au centre du output lorsqu'on le modifie
 		document.querySelectorAll('input[type="range"]').forEach((item) => {
 			item.addEventListener('mouseup', function(e){
 				changeValueFactor(item);
@@ -128,6 +125,7 @@ document.addEventListener('keyup', function(e){
 			});
 		});
 
+		// Gérer la sélection des enfants du modèle et la modification de leur propriétés
 		const selectableItems = document.querySelector('.selectable-items');
 		if(selectableItems) {
 			document.querySelector('.selectable-items').addEventListener('click', function(e) {
@@ -137,10 +135,8 @@ document.addEventListener('keyup', function(e){
 					const model_controls = parent_section.querySelector('.model-controls');
 					const targeted_controls = model_controls.querySelector('.targetable-controls');
 					const style_string = t.getAttribute('style') + t.closest('.interactive-model').getAttribute('style');
-					// var styles = style_string.slice(0, style_string.length - 1).split(';').map(x => x.split(':'))
 
 					const controlItems = targeted_controls.querySelectorAll('li');
-					// $('li:has(input)', targeted_controls).each(function() {
 					controlItems.forEach((el) => {
 						if(el.querySelector('input')) {
 							setDefault(el, false);
@@ -189,6 +185,7 @@ document.addEventListener('keyup', function(e){
 		}
 	}
 
+	// Initier le tout.
 	ready();
 
 })();
