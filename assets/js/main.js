@@ -134,7 +134,7 @@
 				const parent_section = t.closest('article');
 				const model_controls = parent_section.querySelector('.model-controls');
 				const targeted_controls = model_controls.querySelector('.targetable-controls');
-				const style_string = t.getAttribute('style') + t.closest('.interactive-model').getAttribute('style');
+				const style_string = t.getAttribute('style');
 
 				const controlItems = targeted_controls.querySelectorAll('li');
 				controlItems.forEach((el) => {
@@ -150,9 +150,9 @@
 						const subParts = parts[i].split(':');
 						const name = subParts[0].replace('--', '').replace(' ', '');
 						const value = subParts[1];
-						const target_input = targeted_controls.querySelector('input[name="' + name + '"]');
-						const refInputType = (target_input) ? target_input.getAttribute('type') : null;
-						const target_output = targeted_controls.querySelector('input[name="' + name + '"]');
+						const target_input = targeted_controls.querySelector('[name="'+name+'"]');
+						const refInputType = (target_input.tagName === 'INPUT') ? target_input.getAttribute('type') : null;
+						const target_output = target_input.closest('li').querySelector('output');
 						if (refInputType == 'radio' || refInputType == 'checkbox') {
 							targeted_controls.querySelector('input[name="' + name + '"][value = "' + value + '"]').checked = true;
 						}
