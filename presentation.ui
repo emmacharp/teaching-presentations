@@ -24,30 +24,48 @@
 			<header>
 				<h1><xsl:value-of select="titre"/></h1>
 			</header>
-			<!-- <nav></nav> -->
 			<main>
 				<xsl:apply-templates select="section"/>
 			</main>
-			<script
-			  src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script id="font-face-bug-workkaround" type="text/javascript">document.documentElement.classList.add('font-face-bug-workaround')</script>
 		</body>
 	</html>
 </xsl:template>
 
-<xsl:template match="section">
+<xsl:template match="cours/section">
 	<section>
-		<!-- <h4><strong><xsl:value-of select="@name"/></strong> — <xsl:value-of select="/cours/titre"/></h4> -->
 		<xsl:apply-templates select="partie"/>
 	</section>
 </xsl:template>
 
 <xsl:template match="partie">
 	<article>
-		<xsl:copy-of select="*"/>
+		<xsl:apply-templates select="@*|node()" />
 	</article>
 </xsl:template>
 
+<xsl:template match="form[@class='model-controls'][not(@id='transform')]//label">
+	<label>
+		<xsl:value-of select="node()" /><span>: </span>
+	</label>
+</xsl:template>
+
+<xsl:template match="input|select"></xsl:template>
+
+<xsl:template match="*[local-name() = 'select' or local-name() = 'input'][1]">
+	<div>
+		<xsl:if test="ancestor::form[not(@id='transform')]">
+			<span>;</span>
+		</xsl:if>
+		<xsl:copy-of select="."></xsl:copy-of>
+		<xsl:copy-of select="following-sibling::*"></xsl:copy-of>
+	</div>
+</xsl:template>
+
+<xsl:template match="@*|node()">
+	<xsl:copy>
+		<xsl:apply-templates select="@*|node()" />
+	</xsl:copy>
+</xsl:template>
 
 </xsl:stylesheet>

@@ -1,307 +1,303 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="presentation.ui" ?>
 <cours>
-  <titre>Révision du modèle de boîte CSS</titre>
-  <section name="Introduction">
-    <partie>
-      <div>
-        <h5>Qu'allons-nous voir aujourd'hui ?</h5>
-        <ol>
-          <li>Pourquoi le modèle de boîte ?</li>
-          <li>Les composantes du modèle de boîte
-						<ul><li><em>Width &amp; Height</em> : les dimensions</li><li><em>Padding</em> : les marges intérieures</li><li><em>Border</em> : les bordures</li><li><em>Margin</em> : les marges extérieures</li><li>Auto : une valeur particulière</li></ul>
-					</li>
-          <li>Les propriétés supplémentaires
-						<ul><li><em>Box-sizing</em> : modifier le modèle</li><li><em>Overflow</em> : quand les enfants dépassent les parents...</li></ul>
-					</li>
-          <li>Les rôles d'affichage
-						<ul><li><em>Display</em> : block, inline, inline-block</li></ul>
-					</li>
-        </ol>
-      </div>
-    </partie>
-    <partie>
-      <h1>Prêts ?</h1>
-    </partie>
-  </section>
-  <section name="Pourquoi ?">
-    <partie>
-      <h3>Pourquoi étudier le modèle de boîte CSS ?</h3>
-      <div>
-        <p>Parce qu'un langage aussi flexible et étendu que le CSS ne peut que réserver des surprises à ses utilisateurs. En l'explorant, vous rencontrerez des comportements vous apparaissant étranges... Des comportements que vous arriverez à comprendre et décortiquer si vous maîtrisez le modèle fondamental du CSS : LA BOÎTE.</p>
-      </div>
-    </partie>
-  </section>
-  <section name="Les composantes">
-    <partie>
-      <h3>Le modèle de boîte et ses composantes</h3>
-      <div>
-        <section>
-          <div class="interactive-model box-model dimensions margin padding border forced">
-            <div class="content">
-              <span contenteditable="true">Contenu</span>
-            </div>
-          </div>
-        </section>
-      </div>
-    </partie>
-    <partie>
-      <h3>Tout, tout, TOUT, est un rectangle.</h3>
-      <p>Chaque élément se conforme au modèle, en tout temps.</p>
-    </partie>
-    <partie>
-      <div>
-        <h3>Les dimensions</h3>
-        <section>
-          <div>
-            <div class="interactive-model box-model dimensions">
-              <div class="content">
-                <span contenteditable="true">Contenu</span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <form class="model-controls">
-        <ul>
-          <li>
-            <label>Width</label>
-            <input type="range" step="10" min="0" max="800" value="200" name="width"/>
-            <input type="checkbox" name="width" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Height</label>
-            <input type="range" step="10" min="0" max="400" value="100" name="height"/>
-            <input type="checkbox" name="height" value="auto" checked=""/>
-          </li>
-        </ul>
-      </form>
-    </partie>
-    <partie>
-      <div>
-        <h3>Les bordures</h3>
-        <section>
-          <div class="interactive-model box-model border dimensions forced">
-            <div class="content">
-              <span contenteditable="true">Contenu</span>
-            </div>
-          </div>
-        </section>
-      </div>
-      <form class="model-controls">
-        <ul>
-          <li>
-            <label>Border</label>
-            <input type="range" step="10" min="0" value="0" max="80" name="border"/>
-          </li>
-        </ul>
-      </form>
-    </partie>
-    <partie>
-      <div>
-        <h3>Les marges intérieures</h3>
-        <section>
-          <div class="interactive-model box-model dimensions padding forced">
-            <div class="content">
-              <span contenteditable="true">Contenu</span>
-            </div>
-          </div>
-        </section>
-      </div>
-      <form class="model-controls">
-        <ul>
-          <li>
-            <label>Padding</label>
-            <input type="range" step="10" min="0" max="200" value="20" name="padding"/>
-          </li>
-        </ul>
-      </form>
-    </partie>
-    <partie>
-      <div>
-        <h3>Les marges extérieures</h3>
-        <div class="previous-model">
-          <span>Bloc précédent</span>
-        </div>
-        <div class="interactive-model box-model dimensions margin forced">
-          <div class="content">
-            <span contenteditable="true">Contenu</span>
-          </div>
-        </div>
-        <div class="next-model">
-          <span>Bloc suivant</span>
-        </div>
-      </div>
-      <form class="model-controls">
-        <ul>
-          <li>
-            <label>Margin</label>
-            <input type="range" step="10" min="-100" max="200" value="0" name="margin"/>
-            <input type="checkbox" name="margin" value="auto"/>
-          </li>
-        </ul>
-      </form>
-    </partie>
-    <partie>
-      <div>
-        <section>
-          <div class="previous-model">
-            <span>Bloc précédent</span>
-          </div>
-          <div class="interactive-model box-model dimensions margin padding border">
-            <div class="content">
-              <span contenteditable="true">Contenu</span>
-            </div>
-          </div>
-          <div class="next-model">
-            <span>Bloc suivant</span>
-          </div>
-        </section>
-      </div>
-      <!-- <div> -->
-      <form class="model-controls">
-        <ul>
-          <li>
-            <label>Box Sizing</label>
-            <select name="box-sizing">
-              <option value="content-box">content-box</option>
-              <option value="border-box">border-box</option>
-            </select>
-          </li>
-          <li>
-            <label>Width</label>
-            <input type="range" step="10" min="0" max="1600" value="200" name="width"/>
-            <input type="checkbox" name="width" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Height</label>
-            <input type="range" step="10" min="0" max="600" value="200" name="height"/>
-            <input type="checkbox" name="height" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Padding</label>
-            <input type="range" step="10" min="0" max="200" value="0" name="padding"/>
-          </li>
-          <li>
-            <label>Border</label>
-            <input type="range" step="10" min="0" value="0" max="80" name="border"/>
-          </li>
-          <li>
-            <label>Margin</label>
-            <input type="range" step="10" min="-100" max="200" value="40" name="margin"/>
-            <input type="checkbox" name="margin" value="auto" checked=""/>
-          </li>
-        </ul>
-      </form>
-      <!-- </div> -->
-    </partie>
-  </section>
-  <section name="Les rôles d'affichage">
-    <partie>
-      <div>
-        <h3>Les rôles d'affichage</h3>
-        <p><em>Display</em> : block, inline, inline-block</p>
-      </div>
-    </partie>
-    <partie>
-      <div>
-        <h3>Exemple</h3>
-        <nav class="display-roles interactive-model">
-          <a href="">Accueil</a>
-          <a href="">Services</a>
-          <a href="">À propos</a>
-          <a href="">Équipe</a>
-          <a href="">Contact</a>
-        </nav>
-      </div>
-      <form class="model-controls">
-        <ul>
-          <li>
-            <h3>Conteneur</h3>
-          </li>
-          <hr/>
-          <li>
-            <label>Overflow</label>
-            <select name="parent-overflow">
-            	<option value="visible" selected="">visible</option>
-            	<option value="auto">auto</option>
-            	<option value="scroll">scroll</option>
-            	<option value="hidden">hidden</option>
-            </select>
-          </li>
-          <li>
-            <label>Width</label>
-            <input type="range" step="100" min="0" max="1000" value="500" name="parent-width"/>
-            <input type="checkbox" name="parent-width" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Height</label>
-            <input type="range" step="100" min="0" max="1000" value="500" name="parent-height"/>
-            <input type="checkbox" name="parent-height" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Padding</label>
-            <input type="range" step="10" min="0" max="200" value="0" name="parent-padding"/>
-          </li>
-          <li>
-            <label>Border</label>
-            <input type="range" step="10" min="0" value="0" max="80" name="parent-border"/>
-          </li>
-          <li>
-            <h3>Element</h3>
-          </li>
-          <hr/>
-          <li>
-            <label>Display</label>
-            <select name="display">
-            	<option value="inline" selected="">inline</option>
-            	<option value="inline-block">inline-block</option>
-            	<option value="block">block</option>
-            </select>
-          </li>
-          <li>
-            <label>Box-Sizing</label>
-            <select name="box-sizing">
-            	<option value="content-box" selected="">content-box</option>
-            	<option value="border-box">border-box</option>
-            </select>
-          </li>
-          <li>
-            <label>Width</label>
-            <input type="range" step="10" min="0" max="200" value="100" name="width"/>
-            <input type="checkbox" name="width" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Height</label>
-            <input type="range" step="10" min="0" max="200" value="10" name="height"/>
-            <input type="checkbox" name="height" value="auto" checked=""/>
-          </li>
-          <li>
-            <label>Padding</label>
-            <input type="range" step="1" min="0" max="20" value="0" name="padding"/>
-          </li>
-          <li>
-            <label>Line-height</label>
-            <input type="range" step="1" min="0" value="20" max="60" name="line-height"/>
-          </li>
-          <li>
-            <label>Margin</label>
-            <input type="range" step="10" min="-20" max="40" value="10" name="margin"/>
-            <input type="checkbox" name="margin" value="auto" checked=""/>
-          </li>
-        </ul>
-      </form>
-    </partie>
-    <partie>
-      <h3>Lecture subséquente</h3>
-      <ul>
-        <li>
-          <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">MDN — The Box Model (en anglais)</a>
-        </li>
-        <li>
-          <a href="https://www.w3.org/TR/css-box-3/">W3C — The Box Model Specification (en anglais)</a>
-        </li>
-      </ul>
-    </partie>
-  </section>
+	<titre>Révision du modèle de boîte CSS</titre>
+	<section name="Introduction">
+		<partie>
+			<section>
+				<h5>Qu'allons-nous voir aujourd'hui ?</h5>
+				<ol>
+					<li>Pourquoi le modèle de boîte ?</li>
+					<li>Les composantes du modèle de boîte
+					<ul><li><em>Width &amp; Height</em> : les dimensions</li><li><em>Padding</em> : les marges intérieures</li><li><em>Border</em> : les bordures</li><li><em>Margin</em> : les marges extérieures</li><li>Auto : une valeur particulière</li></ul>
+				</li>
+				<li>Les propriétés supplémentaires
+				<ul><li><em>Box-sizing</em> : modifier le modèle</li><li><em>Overflow</em> : quand les enfants dépassent les parents...</li></ul>
+			</li>
+			<li>Les rôles d'affichage
+			<ul><li><em>Display</em> : block, inline, inline-block</li></ul>
+		</li>
+	</ol>
+</section>
+	 </partie>
+	 <partie>
+		 <h1>Prêts ?</h1>
+	 </partie>
+ </section>
+ <section name="Pourquoi ?">
+	 <partie>
+		 <h3>Pourquoi étudier le modèle de boîte CSS ?</h3>
+		 <p>Parce qu'un langage aussi flexible et étendu que le CSS ne peut que réserver des surprises à ses utilisateurs. En l'explorant, vous rencontrerez des comportements vous apparaissant étranges... Des comportements que vous arriverez à comprendre et décortiquer si vous maîtrisez le modèle fondamental du CSS : LA BOÎTE.</p>
+	 </partie>
+ </section>
+ <section name="Les composantes">
+	 <partie>
+		 <h3>Le modèle de boîte et ses composantes</h3>
+		 <section>
+			 <div class="interactive-model box-model dimensions margin padding border forced">
+				 <div class="content">
+					 <span>Contenu</span>
+				 </div>
+			 </div>
+		 </section>
+	 </partie>
+	 <partie>
+		 <h3>Tout, tout, TOUT, est un rectangle.</h3>
+		 <p>Chaque élément se conforme au modèle, en tout temps.</p>
+	 </partie>
+	 <partie>
+		 <div>
+			 <h3>Les dimensions</h3>
+			 <section>
+				 <div>
+					 <div class="interactive-model box-model dimensions">
+						 <div class="content">
+							 <span contenteditable="true">Contenu</span>
+						 </div>
+					 </div>
+				 </div>
+			 </section>
+		 </div>
+		 <form class="model-controls">
+			 <ul>
+				 <li>
+					 <label>width</label>
+					 <input type="range" step="10" min="0" max="800" value="200" name="width"/>
+					 <input type="checkbox" name="width" value="auto" checked=""/>
+				 </li>
+				 <li>
+					 <label>height</label>
+					 <input type="range" step="10" min="0" max="400" value="100" name="height"/>
+					 <input type="checkbox" name="height" value="auto" checked=""/>
+				 </li>
+			 </ul>
+		 </form>
+	 </partie>
+	 <partie>
+		 <div>
+			 <h3>Les bordures</h3>
+			 <section>
+				 <div class="interactive-model box-model border dimensions forced">
+					 <div class="content">
+						 <span contenteditable="true">Contenu</span>
+					 </div>
+				 </div>
+			 </section>
+		 </div>
+		 <form class="model-controls">
+			 <ul>
+				 <li>
+					 <label>border</label>
+					 <input type="range" step="10" min="0" value="0" max="80" name="border"/>
+				 </li>
+			 </ul>
+		 </form>
+	 </partie>
+	 <partie>
+		 <div>
+			 <h3>Les marges intérieures</h3>
+			 <section>
+				 <div class="interactive-model box-model dimensions padding forced">
+					 <div class="content">
+						 <span contenteditable="true">Contenu</span>
+					 </div>
+				 </div>
+			 </section>
+		 </div>
+		 <form class="model-controls">
+			 <ul>
+				 <li>
+					 <label>padding</label>
+					 <input type="range" step="10" min="0" max="200" value="20" name="padding"/>
+				 </li>
+			 </ul>
+		 </form>
+	 </partie>
+	 <partie>
+		 <div>
+			 <h3>Les marges extérieures</h3>
+			 <div class="previous-model">
+				 <span>Bloc précédent</span>
+			 </div>
+			 <div class="interactive-model box-model dimensions margin forced">
+				 <div class="content">
+					 <span contenteditable="true">Contenu</span>
+				 </div>
+			 </div>
+			 <div class="next-model">
+				 <span>Bloc suivant</span>
+			 </div>
+		 </div>
+		 <form class="model-controls">
+			 <ul>
+				 <li>
+					 <label>margin</label>
+					 <input type="range" step="10" min="-100" max="200" value="0" name="margin"/>
+					 <input type="checkbox" name="margin" value="auto"/>
+				 </li>
+			 </ul>
+		 </form>
+	 </partie>
+	 <partie>
+		 <div>
+			 <section>
+				 <div class="previous-model">
+					 <span>Bloc précédent</span>
+				 </div>
+				 <div class="interactive-model box-model dimensions margin padding border">
+					 <div class="content">
+						 <span contenteditable="true">Contenu</span>
+					 </div>
+				 </div>
+				 <div class="next-model">
+					 <span>Bloc suivant</span>
+				 </div>
+			 </section>
+		 </div>
+		 <!-- <div> -->
+			 <form class="model-controls">
+				 <ul>
+					 <li>
+						 <label>box-sizing</label>
+						 <select name="box-sizing">
+							 <option value="content-box">content-box</option>
+							 <option value="border-box">border-box</option>
+						 </select>
+					 </li>
+					 <li>
+						 <label>width</label>
+						 <input type="range" step="10" min="0" max="1600" value="200" name="width"/>
+						 <input type="checkbox" name="width" value="auto" checked=""/>
+					 </li>
+					 <li>
+						 <label>height</label>
+						 <input type="range" step="10" min="0" max="600" value="200" name="height"/>
+						 <input type="checkbox" name="height" value="auto" checked=""/>
+					 </li>
+					 <li>
+						 <label>padding</label>
+						 <input type="range" step="10" min="0" max="200" value="0" name="padding"/>
+					 </li>
+					 <li>
+						 <label>border</label>
+						 <input type="range" step="10" min="0" value="0" max="80" name="border"/>
+					 </li>
+					 <li>
+						 <label>margin</label>
+						 <input type="range" step="10" min="-100" max="200" value="40" name="margin"/>
+						 <input type="checkbox" name="margin" value="auto" checked=""/>
+					 </li>
+				 </ul>
+			 </form>
+			 <!-- </div> -->
+	 </partie>
+ </section>
+ <section name="Les rôles d'affichage">
+	 <partie>
+		 <div>
+			 <h3>Les rôles d'affichage</h3>
+			 <p><em>Display</em> : block, inline, inline-block</p>
+		 </div>
+	 </partie>
+	 <partie>
+		 <div>
+			 <h3>Exemple</h3>
+			 <nav class="display-roles interactive-model">
+				 <a href="">Accueil</a>
+				 <a href="">Services</a>
+				 <a href="">À propos</a>
+				 <a href="">Équipe</a>
+				 <a href="">Contact</a>
+			 </nav>
+		 </div>
+		 <form class="model-controls">
+			 <details open="">
+				 <summary><span>Conteneur</span><hr/></summary>
+				 <ul>
+					 <li>
+						 <label>overflow</label>
+						 <select name="parent-overflow">
+							 <option value="visible" selected="">visible</option>
+							 <option value="auto">auto</option>
+							 <option value="scroll">scroll</option>
+							 <option value="hidden">hidden</option>
+						 </select>
+					 </li>
+					 <li>
+						 <label>width</label>
+						 <input type="range" step="100" min="0" max="1000" value="500" name="parent-width"/>
+						 <input type="checkbox" name="parent-width" value="auto" checked=""/>
+					 </li>
+					 <li>
+						 <label>height</label>
+						 <input type="range" step="100" min="0" max="1000" value="500" name="parent-height"/>
+						 <input type="checkbox" name="parent-height" value="auto" checked=""/>
+					 </li>
+					 <li>
+						 <label>padding</label>
+						 <input type="range" step="10" min="0" max="200" value="0" name="parent-padding"/>
+					 </li>
+					 <li>
+						 <label>border</label>
+						 <input type="range" step="10" min="0" value="0" max="80" name="parent-border"/>
+					 </li>
+				 </ul>
+			 </details>
+			 <details open="">
+				 <summary><span>Element</span><hr/></summary>
+				 <ul>
+					 <li>
+						 <label>display</label>
+						 <select name="display">
+							 <option value="inline" selected="">inline</option>
+							 <option value="inline-block">inline-block</option>
+							 <option value="block">block</option>
+						 </select>
+					 </li>
+					 <li>
+						 <label>box-sizing</label>
+						 <select name="box-sizing">
+							 <option value="content-box" selected="">content-box</option>
+							 <option value="border-box">border-box</option>
+						 </select>
+					 </li>
+					 <li>
+						 <label>width</label>
+						 <input type="range" step="10" min="0" max="200" value="100" name="width"/>
+						 <input type="checkbox" name="width" value="auto" checked=""/>
+					 </li>
+					 <li>
+						 <label>height</label>
+						 <input type="range" step="10" min="0" max="200" value="10" name="height"/>
+						 <input type="checkbox" name="height" value="auto" checked=""/>
+					 </li>
+					 <li>
+						 <label>padding</label>
+						 <input type="range" step="10" min="0" max="20" value="0" name="padding"/>
+					 </li>
+					 <li>
+						 <label>line-height</label>
+						 <input type="range" step="10" min="0" value="20" max="60" name="line-height"/>
+					 </li>
+					 <li>
+						 <label>margin</label>
+						 <input type="range" step="10" min="-20" max="40" value="10" name="margin"/>
+						 <input type="checkbox" name="margin" value="auto" checked=""/>
+					 </li>
+				 </ul>
+			 </details>
+		 </form>
+	 </partie>
+	 <partie>
+		 <h3>Lecture subséquente</h3>
+		 <ul>
+			 <li>
+				 <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">MDN — The Box Model (en anglais)</a>
+			 </li>
+			 <li>
+				 <a href="https://www.w3.org/TR/css-box-3/">W3C — The Box Model Specification (en anglais)</a>
+			 </li>
+		 </ul>
+	 </partie>
+ </section>
 </cours>

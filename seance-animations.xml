@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="presentation.ui" ?>
+
+<cours>
+	<titre>Créer des animations en CSS</titre>
+	<section name="Introduction">
+		<partie>
+			<div style="align-self: flex-start;">
+				<h3>Les animations</h3>
+				<section>
+					<div class="animation-example interactive-model" contenteditable="true">
+						<img src="assets/img/nicolas.jpg" />
+					</div>
+				</section>
+			</div>
+			<form class="model-controls">
+				<ul>
+					<li>
+						<label for="">animation-name</label>
+						<select name="animation-name">
+							<option value="none" selected="">none</option>
+							<option value="glissement">glissement</option>
+							<option value="rebondissement">rebondissement</option>
+							<option value="saut">saut</option>
+							<option value="chute">chute</option>
+						</select>
+						
+					</li>
+					<li>
+						<label for="">animation-duration</label>
+						<input type="range" step="100" min="0" max="5000" value="0" name="animation-duration" />
+					</li>
+					<li>
+						<label for="">animation-timing-function</label>
+						<input type="text" value="linear" list="animation-timing-functions" name="animation-timing-function" />
+					</li>
+					<li>
+						<label for="">animation-delay</label>
+						<input type="range" step="100" min="0" max="5000" value="0" name="animation-delay" />
+					</li>
+					<li>
+						<label for="">animation-iteration-count</label>
+						<input type="range" step=".5" min="0" max="4" value="1" name="animation-iteration-count" /><input type="checkbox" name="animation-iteration-count" value="infinite" />
+					</li>
+					<li>
+						<label for="">animation-direction</label>
+						<select name="animation-direction">
+							<option value="normal" selected="">normal</option>
+							<option value="reverse">reverse</option>
+							<option value="alternate">alternate</option>
+							<option value="alternate-reverse">alternate-reverse</option>
+						</select>
+					</li>
+					<li>
+						<label for="">animation-fill-mode</label>
+						<select name="animation-fill-mode">
+							<option value="none" selected="" >none</option>
+							<option value="forwards">forwards</option>
+							<option value="backwards">backwards</option>
+							<option value="both">both</option>
+						</select>
+					</li>
+					<li>
+						<label for="">animation-play-state</label>
+						<select name="animation-play-state">
+							<option value="running" selected="">running</option>
+							<option value="paused">paused</option>
+						</select>
+					</li>
+				</ul>
+				<datalist id="animation-names">
+					<option value="glissement">glissement</option>
+					<option value="rebondissement">rebondissement</option>
+					<option value="saut">saut</option>
+					<option value="chute">chute</option>
+				</datalist>
+				<datalist id="animation-timing-functions">
+					<option value="linear">linear</option>
+					<option value="ease-in">ease-in</option>
+					<option value="ease-out">ease-out</option>
+					<option value="ease-in-out">ease-in-out</option>
+				</datalist>
+			</form>
+		</partie>
+	</section>
+</cours>
