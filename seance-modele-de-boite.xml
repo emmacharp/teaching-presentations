@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="presentation.ui" ?>
 <cours>
-	<titre>Révision du modèle de boîte CSS</titre>
+	<titre>Le modèle de boîte CSS</titre>
 	<section name="Introduction">
 		<partie>
 			<section>
@@ -19,9 +19,6 @@
 		</li>
 	</ol>
 </section>
-	 </partie>
-	 <partie>
-		 <h1>Prêts ?</h1>
 	 </partie>
  </section>
  <section name="Pourquoi ?">
