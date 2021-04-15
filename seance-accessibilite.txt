@@ -31,4 +31,4 @@ Il peut y avoir des dilemmes ! Clarté de développement, portabilité et modula
 
 Prenez le temps d'utiliser le maximum des outils disponibles pour tester, évaluer et valider votre code.
 
-Vous allez voir passer et entendre parler de ARIA (Accessible Rich Internet Application). ARIA est un vocabulaire standardisé d'attributs voués aux dispositifs d'accessibilité (lecteurs d'écran, par exemple). Son utilisation est somme toute simple bien que peut supportée. Référez-vous au lien ci-haut à ce sujet pour en apprendre plus.
+Vous allez voir passer et entendre parler de ARIA (Accessible Rich Internet Application). ARIA est un vocabulaire standardisé d'attributs voués aux dispositifs d'accessibilité (lecteurs d'écran, par exemple). Son utilisation est somme toute simple bien que peu supportée. Référez-vous au lien ci-haut à ce sujet pour en apprendre plus.
