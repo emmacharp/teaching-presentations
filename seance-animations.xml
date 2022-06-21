@@ -6,7 +6,6 @@
 	<section name="Introduction">
 		<partie>
 			<div style="align-self: flex-start;">
-				<h3>Les animations</h3>
 				<section>
 					<div class="animation-example interactive-model" contenteditable="true">
 						<img src="assets/img/nicolas.jpg" />
@@ -82,5 +81,13 @@
 				</datalist>
 			</form>
 		</partie>
+		<!-- <partie> -->
+		<!-- 	<h2>Lecture subséquente</h2> -->
+		<!-- 	<ul> -->
+		<!-- 		<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/animation">MDN — Animation</a></li> -->
+		<!-- 		<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Animations_CSS/Utiliser_les_animations_CSS">MDN — Utiliser les animations CSS</a></li> -->
+		<!-- 		<li><a href="https://tympanus.net/codrops/css_reference/keyframes/">Codrops — Référence Keyframe</a></li> -->
+		<!-- 	</ul> -->
+		<!-- </partie> -->
 	</section>
 </cours>

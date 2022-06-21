@@ -5,30 +5,7 @@
 	<titre>Positionner des éléments en CSS</titre>
 	<section>
 		<partie>
-			<section>
-				<h5>Qu'allons-nous voir aujourd'hui ?</h5>
-				<ol>
-					<li>Pourquoi positionner ?</li>
-					<li>Le flottement</li>
-					<li>Les différents modes de positionnement
-						
-					</li>
-					<li>Les propriétés de déplacement
-						
-					</li>
-				</ol>
-			</section>
-		</partie>
-		<partie>
-			<h3>Pourquoi utiliser les modes de positionnement ?</h3>
-			<p>Parce que certains patrons de conception (les menus déroulants, les fenêtres modales, les navigations fixées, etc.) nécessitent qu'on les positionne de manière spécifique.</p>
-		</partie>
-		<partie>
-			<h2>Quelques exemples ?</h2>
-		</partie>
-		<partie>
 			<div>
-			<h3>Le flottement</h3>
 				<section>
 					<div>
 						<div class="float-example interactive-model">
@@ -114,7 +91,6 @@
 		</partie>
 		<partie>
 			<div style="align-self: flex-start;">
-				<h3>Les modes de positionnement</h3>
 				<section>
 					<div class="positioning-example interactive-model" contenteditable="true">
 						<p>Contenu précédent</p>
@@ -182,13 +158,13 @@
 				</details>
 			</form>
 		</partie>
-		<partie>
-			<h3>Lecture subséquente</h3>
-			<ul>
-				<li><a href="https://www.w3.org/TR/css-position-3/">W3C - Module de positionnement CSS</a></li>
-				<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/position">MDN - Propriété « position »</a></li>
-				<li><a href="https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout/Le_positionnement">Introduction au positionnement</a></li>
-			</ul>
-		</partie>
+		<!-- <partie> -->
+		<!-- 	<h3>Lecture subséquente</h3> -->
+		<!-- 	<ul> -->
+		<!-- 		<li><a href="https://www.w3.org/TR/css-position-3/">W3C - Module de positionnement CSS</a></li> -->
+		<!-- 		<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/position">MDN - Propriété « position »</a></li> -->
+		<!-- 		<li><a href="https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout/Le_positionnement">Introduction au positionnement</a></li> -->
+		<!-- 	</ul> -->
+		<!-- </partie> -->
 	</section>
 </cours>
