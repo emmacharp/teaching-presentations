@@ -27,11 +27,11 @@
 		const t = item.closest('li');
 		t.field = t.querySelector('input, select');
 		t.name = t.field.getAttribute('name');
-		t.auto = t.querySelector('input[checked]');
+		t.checkbox = t.querySelector('input[type="checkbox"]');
 		t.preset = t.field.value;
 		t.isRange = t.field.matches('[type="range"]');
 		t.step = (t.isRange) ? t.field.getAttribute('step') : 1;
-		t.val = (t.auto && t.auto.checked) ? t.auto.getAttribute('value') : t.preset;
+		t.val = (t.checkbox && t.checkbox.checked) ? t.checkbox.getAttribute('value') : t.preset;
 		t.parent_section = t.closest('article');
 		t.interactive_model = t.parent_section.querySelectorAll('.interactive-model');
 		t.target = (t.closest('.targetable-controls')) ? t.interactive_model[0].children : t.interactive_model;
@@ -98,8 +98,7 @@
 			const output = t.querySelector('output');
 
 			output.innerHTML = t.val;
-
-
+			
 			if (t.closest('.targeted')) {
 				[...t.target].forEach((element) => {
 					if(element.matches('.selected')) {

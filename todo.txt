@@ -1,8 +1,8 @@
-x (A) 2021-02-06 Permettre de copier coller les pseudo-code +presentation @ux
-(A) 2021-02-06 Afficher comme il faut les changements de valeur dans les output +presentation @ux
-x (A) 2021-02-06 Éviter le jank qui vient avec le trop grand nombre de caractères dans le output quand on joue avec les curseurs +presentation @ux
-(A) 2021-02-06 Regarder que le modèle fonctionne vraiment bien. Par exemple, dans le modèle de boîte +presentation @ux
-x (B) Mettre toutes les propriétés en minuscules.
-(B) Corriger les fautes.
-x (B) Régler le problème de blanc sur blanc pour les select sur PC.
-x (A) Passer au javascript vanille +optimisation @js @dev
+x (A) 2021-02-06 Permettre de copier coller les pseudo-code +presentation @ux @college
+(A) 2021-02-06 Afficher comme il faut les changements de valeur dans les output +presentation @ux @college
+x (A) 2021-02-06 Éviter le jank qui vient avec le trop grand nombre de caractères dans le output quand on joue avec les curseurs +presentation @ux @college
+(A) 2021-02-06 Regarder que le modèle fonctionne vraiment bien. Par exemple, dans le modèle de boîte +presentation @ux @college
+x (B) Mettre toutes les propriétés en minuscules. @college
+(B) Corriger les fautes. @college
+x (B) Régler le problème de blanc sur blanc pour les select sur PC. @college
+x (A) Passer au javascript vanille +optimisation @js @dev @college

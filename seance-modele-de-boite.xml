@@ -1,35 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="presentation.ui" ?>
 <cours>
-	<titre>Révision du modèle de boîte CSS</titre>
-	<section name="Introduction">
-		<partie>
-			<section>
-				<h5>Qu'allons-nous voir aujourd'hui ?</h5>
-				<ol>
-					<li>Pourquoi le modèle de boîte ?</li>
-					<li>Les composantes du modèle de boîte
-					<ul><li><em>Width &amp; Height</em> : les dimensions</li><li><em>Padding</em> : les marges intérieures</li><li><em>Border</em> : les bordures</li><li><em>Margin</em> : les marges extérieures</li><li>Auto : une valeur particulière</li></ul>
-				</li>
-				<li>Les propriétés supplémentaires
-				<ul><li><em>Box-sizing</em> : modifier le modèle</li><li><em>Overflow</em> : quand les enfants dépassent les parents...</li></ul>
-			</li>
-			<li>Les rôles d'affichage
-			<ul><li><em>Display</em> : block, inline, inline-block</li></ul>
-		</li>
-	</ol>
-</section>
-	 </partie>
-	 <partie>
-		 <h1>Prêts ?</h1>
-	 </partie>
- </section>
- <section name="Pourquoi ?">
-	 <partie>
-		 <h3>Pourquoi étudier le modèle de boîte CSS ?</h3>
-		 <p>Parce qu'un langage aussi flexible et étendu que le CSS ne peut que réserver des surprises à ses utilisateurs. En l'explorant, vous rencontrerez des comportements vous apparaissant étranges... Des comportements que vous arriverez à comprendre et décortiquer si vous maîtrisez le modèle fondamental du CSS : LA BOÎTE.</p>
-	 </partie>
- </section>
+	<titre>Le modèle de boîte CSS</titre>
  <section name="Les composantes">
 	 <partie>
 		 <h3>Le modèle de boîte et ses composantes</h3>
@@ -40,10 +12,6 @@
 				 </div>
 			 </div>
 		 </section>
-	 </partie>
-	 <partie>
-		 <h3>Tout, tout, TOUT, est un rectangle.</h3>
-		 <p>Chaque élément se conforme au modèle, en tout temps.</p>
 	 </partie>
 	 <partie>
 		 <div>
@@ -195,12 +163,6 @@
  <section name="Les rôles d'affichage">
 	 <partie>
 		 <div>
-			 <h3>Les rôles d'affichage</h3>
-			 <p><em>Display</em> : block, inline, inline-block</p>
-		 </div>
-	 </partie>
-	 <partie>
-		 <div>
 			 <h3>Exemple</h3>
 			 <nav class="display-roles interactive-model">
 				 <a href="">Accueil</a>
@@ -288,16 +250,16 @@
 			 </details>
 		 </form>
 	 </partie>
-	 <partie>
-		 <h3>Lecture subséquente</h3>
-		 <ul>
-			 <li>
-				 <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">MDN — The Box Model (en anglais)</a>
-			 </li>
-			 <li>
-				 <a href="https://www.w3.org/TR/css-box-3/">W3C — The Box Model Specification (en anglais)</a>
-			 </li>
-		 </ul>
-	 </partie>
+	 <!-- <partie> -->
+		 <!-- <h3>Lecture subséquente</h3> -->
+		 <!-- <ul> -->
+			 <!-- <li> -->
+				 <!-- <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">MDN — The Box Model (en anglais)</a> -->
+			 <!-- </li> -->
+			 <!-- <li> -->
+				 <!-- <a href="https://www.w3.org/TR/css-box-3/">W3C — The Box Model Specification (en anglais)</a> -->
+			 <!-- </li> -->
+		 <!-- </ul> -->
+	 <!-- </partie> -->
  </section>
 </cours>

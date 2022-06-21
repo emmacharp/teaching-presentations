@@ -5,15 +5,7 @@
 	<titre>Appliquer des effets en CSS</titre>
 	<section name="Introduction">
 		<partie>
-			<h3>Pourquoi appliquer des effets ?</h3>
-			<p>Pour contribuer à la création d'une expérience qui soit à la fois dynamique, fluide et remarquable.
-				<br/><br/>
-				Les <em>designers</em> en raffolent !
-			</p>
-		</partie>
-		<partie>
 			<div>
-			<h3>Les transformations</h3>
 				<section>
 					<div>
 						<div class="transform-example interactive-model">
@@ -218,9 +210,6 @@
 		<!-- 		<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/transform-function">MDN — Les fonctions de transformation</a></li> -->
 		<!-- 		<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/transition">MDN — Transition</a></li> -->
 		<!-- 		<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Transitions/Utiliser_transitions_CSS">MDN — Utiliser les transitions CSS</a></li> -->
-		<!-- 		<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/animation">MDN — Animation</a></li> -->
-		<!-- 		<li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Animations_CSS/Utiliser_les_animations_CSS">MDN — Utiliser les animations CSS</a></li> -->
-		<!-- 		<li><a href="https://tympanus.net/codrops/css_reference/keyframes/">Codrops — Référence Keyframe</a></li> -->
 		<!-- 	</ul> -->
 		<!-- </partie> -->
 	</section>
