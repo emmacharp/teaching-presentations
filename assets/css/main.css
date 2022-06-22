@@ -4,7 +4,7 @@
 html {
 	background-color: var(--primary);
 	scroll-behavior: smooth;
-	color: #ffecc2;
+	/* color: #ffecc2; */
 	scroll-snap-type: y mandatory;
 }
 
@@ -89,7 +89,7 @@ mark {
 		max-width: 100%;
 		box-sizing: border-box;
 		top: 0;
-		background-color: var(--primary);
+		/* background-color: var(--primary); */
 		/* position: sticky; */
 		box-shadow: -1px 0px 0px 1px rgba(0,0,0,.6);
 	}
@@ -152,7 +152,8 @@ mark {
 			font-family: var(--font-alt);
 			font-weight: 600;
 			padding: var(--spacing-thin);
-			background-color: #011833;
+			/* background-color: #011833; */
+			border-left: 1px solid rgba(255,255,255,0.2);
 			border-radius: 3px;
 			display: flex;
 			align-self: flex-start;
@@ -312,11 +313,11 @@ mark {
 		}
 
 		.model-controls>details>summary+* {
-			padding-left: var(--spacing-pico);
+			padding-left: var(--spacing-micro);
 		}
 
 		.model-controls details+details {
-			margin-top: var(--spacing-thin);
+			margin-top: var(--spacing-thinnest);
 		}
 
 		.model-controls ul+details {
@@ -336,9 +337,9 @@ mark {
 			font-weight: 600;
 		}
 
-		.model-controls summary>* {
-			margin-left: var(--spacing-nano);
-		}
+		/* .model-controls summary>* { */
+		/* 	margin-left: var(--spacing-nano); */
+		/* } */
 
 		.model-controls summary>hr {
 			flex-grow: 1;
